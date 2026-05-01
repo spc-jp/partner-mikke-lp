@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>販売店パートナーみっけ｜楽一の隣に、もう1本サブスクの柱を立てませんか</title>
-<meta name="description" content="販売店のお客様の困りごとを、毎月の月額に変える。製造・卸・サービス・建設の業種別お悩み解決アプリパック。販売店経由で月額提供、サポートは開発元が一次対応。">
-<meta property="og:title" content="販売店パートナーみっけ｜楽一の隣に、もう1本サブスクの柱を立てませんか">
-<meta property="og:description" content="販売店のお客様の困りごとを、毎月の月額に変える。4業種12アプリのサブスクパッケージ。">
+<title>販売店パートナーみっけ｜中小企業を、もっと自慢できる会社に。</title>
+<meta name="description" content="お客様・取引先・求職者・金融機関が「この会社、進んでるな」と感じる成果物を、AIが毎月生み出すサブスクパッケージ。CASIO楽一販売店パートナー向け新提案。">
+<meta property="og:title" content="販売店パートナーみっけ｜中小企業を、もっと自慢できる会社に。">
+<meta property="og:description" content="便利なツールではなく、対外評価が上がる成果物を生むAIアプリ群。3パック9アプリ構成。">
 <meta property="og:image" content="https://partner-mikke.pages.dev/ogp.png">
 <meta property="og:url" content="https://partner-mikke.pages.dev/">
 <meta property="og:type" content="website">
@@ -29,14 +29,12 @@
   --text:#333333;
   --text-light:#666666;
   --border:#e5e7eb;
-  --color-seizo:#c2410c;
-  --color-seizo-pale:#fff4ed;
-  --color-oroshi:#15803d;
-  --color-oroshi-pale:#f0fdf4;
-  --color-service:#be185d;
-  --color-service-pale:#fdf2f8;
-  --color-kensetsu:#92400e;
-  --color-kensetsu-pale:#fffbeb;
+  --color-pack1:#0e5c5f;
+  --color-pack1-pale:#e6f4f4;
+  --color-pack2:#7c2d3e;
+  --color-pack2-pale:#fbeef0;
+  --color-pack3:#1e4d8b;
+  --color-pack3-pale:#eaf0f9;
 }
 html{scroll-behavior:smooth}
 body{
@@ -48,7 +46,6 @@ body{
 }
 .serif{font-family:'Noto Serif JP',serif}
 
-/* ヘッダー */
 .header{
   position:fixed;top:0;left:0;right:0;
   background:rgba(255,255,255,0.95);
@@ -76,7 +73,6 @@ body{
 }
 .header-cta:hover{background:var(--gold-light)}
 
-/* ファーストビュー */
 .hero{
   background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
   color:var(--white);
@@ -105,7 +101,7 @@ body{
   margin-bottom:30px;
 }
 .hero h1{
-  font-size:46px;font-weight:700;
+  font-size:48px;font-weight:700;
   line-height:1.4;
   margin-bottom:30px;
   letter-spacing:0.02em;
@@ -115,7 +111,7 @@ body{
   font-size:19px;line-height:1.9;
   margin-bottom:40px;
   color:rgba(255,255,255,0.9);
-  max-width:760px;
+  max-width:780px;
   margin-left:auto;margin-right:auto;
 }
 .hero-trust{
@@ -125,9 +121,7 @@ body{
   font-size:14px;
   color:rgba(255,255,255,0.8);
 }
-.hero-trust-item{
-  display:flex;align-items:center;gap:6px;
-}
+.hero-trust-item{display:flex;align-items:center;gap:6px}
 .hero-trust-item::before{
   content:'✓';
   color:var(--gold-light);
@@ -169,7 +163,6 @@ body{
   border-color:var(--white);
 }
 
-/* セクション共通 */
 .section{padding:90px 20px}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-title{
@@ -193,7 +186,30 @@ body{
   line-height:1.8;
 }
 
-/* 問題提起 */
+.concept{background:var(--bg-cream)}
+.concept-box{
+  max-width:880px;
+  margin:0 auto;
+  background:var(--white);
+  border-radius:16px;
+  padding:50px 50px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.06);
+  border-left:6px solid var(--gold);
+}
+.concept-quote{
+  font-family:'Noto Serif JP',serif;
+  font-size:22px;
+  line-height:1.9;
+  color:var(--navy);
+  margin-bottom:30px;
+}
+.concept-quote .em{color:var(--gold);font-weight:700}
+.concept-text{
+  font-size:15px;
+  line-height:2;
+  color:var(--text);
+}
+
 .problem{background:var(--bg-light)}
 .problem-grid{
   display:grid;
@@ -208,10 +224,7 @@ body{
   box-shadow:0 4px 20px rgba(0,0,0,0.05);
   text-align:center;
 }
-.problem-icon{
-  font-size:48px;
-  margin-bottom:20px;
-}
+.problem-icon{font-size:48px;margin-bottom:20px}
 .problem-card h3{
   font-size:19px;
   color:var(--navy);
@@ -224,18 +237,51 @@ body{
   line-height:1.8;
 }
 
-/* 仕組み */
+.value-axes{background:var(--white)}
+.axes-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.axes-card{
+  background:var(--bg-cream);
+  padding:35px 30px;
+  border-radius:12px;
+  text-align:center;
+  border-top:4px solid var(--gold);
+}
+.axes-icon{
+  width:64px;height:64px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--white);
+  font-size:28px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;
+  font-weight:700;
+}
+.axes-card h3{
+  font-family:'Noto Serif JP',serif;
+  font-size:20px;
+  color:var(--navy);
+  margin-bottom:12px;
+}
+.axes-card p{
+  font-size:14px;
+  color:var(--text-light);
+  line-height:1.8;
+  text-align:left;
+}
+
 .mechanism-flow{
   background:var(--bg-cream);
   border-radius:16px;
   padding:50px 40px;
-  margin-bottom:30px;
 }
 .mechanism-row{
   display:grid;
   grid-template-columns:1fr 60px 1fr 60px 1fr;
-  align-items:center;
-  gap:10px;
+  align-items:center;gap:10px;
 }
 .mechanism-box{
   background:var(--white);
@@ -275,136 +321,183 @@ body{
   font-weight:700;
 }
 
-/* パックセクション */
 .packages{background:var(--bg-light)}
-.pack-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px;
-}
 .pack-card{
   background:var(--white);
   border-radius:16px;
-  padding:40px 35px;
+  padding:50px 45px;
   box-shadow:0 4px 20px rgba(0,0,0,0.06);
-  border-top:6px solid var(--navy);
-  transition:all 0.3s;
+  margin-bottom:30px;
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:45px;
+  align-items:start;
 }
-.pack-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 8px 32px rgba(0,0,0,0.1);
-}
-.pack-card.seizo{border-top-color:var(--color-seizo)}
-.pack-card.oroshi{border-top-color:var(--color-oroshi)}
-.pack-card.service{border-top-color:var(--color-service)}
-.pack-card.kensetsu{border-top-color:var(--color-kensetsu)}
+.pack-card.pack1{border-top:6px solid var(--color-pack1)}
+.pack-card.pack2{border-top:6px solid var(--color-pack2)}
+.pack-card.pack3{border-top:6px solid var(--color-pack3)}
 
-.pack-header{
-  display:flex;align-items:center;gap:15px;
-  margin-bottom:20px;
-}
-.pack-icon{
-  font-size:40px;
-}
+.pack-left{position:sticky;top:80px}
+.pack-icon-large{font-size:56px;margin-bottom:16px}
 .pack-title{
   font-family:'Noto Serif JP',serif;
   font-size:24px;
-  color:var(--navy);
   font-weight:700;
+  margin-bottom:8px;
+  line-height:1.4;
 }
-.pack-card.seizo .pack-title{color:var(--color-seizo)}
-.pack-card.oroshi .pack-title{color:var(--color-oroshi)}
-.pack-card.service .pack-title{color:var(--color-service)}
-.pack-card.kensetsu .pack-title{color:var(--color-kensetsu)}
+.pack-card.pack1 .pack-title{color:var(--color-pack1)}
+.pack-card.pack2 .pack-title{color:var(--color-pack2)}
+.pack-card.pack3 .pack-title{color:var(--color-pack3)}
 
-.pack-target{
+.pack-tagline{
   font-size:13px;
   color:var(--text-light);
-  margin-bottom:20px;
-  padding-bottom:20px;
-  border-bottom:1px dashed var(--border);
-}
-.pack-troubles{
-  background:var(--bg-light);
-  padding:18px 22px;
-  border-radius:8px;
   margin-bottom:25px;
-}
-.pack-troubles-title{
-  font-size:13px;
-  font-weight:700;
-  color:var(--navy);
-  margin-bottom:10px;
-}
-.pack-troubles-list{
-  list-style:none;
-  font-size:14px;
-  color:var(--text);
-  line-height:1.9;
-}
-.pack-troubles-list li::before{
-  content:'・';
-  color:var(--gold);
-  font-weight:700;
-  margin-right:4px;
+  line-height:1.7;
 }
 
-.pack-apps{
-  margin-bottom:25px;
+.pack-target-box{
+  padding:18px;
+  border-radius:10px;
+  margin-bottom:20px;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--text);
 }
-.pack-apps-title{
+.pack-card.pack1 .pack-target-box{background:var(--color-pack1-pale)}
+.pack-card.pack2 .pack-target-box{background:var(--color-pack2-pale)}
+.pack-card.pack3 .pack-target-box{background:var(--color-pack3-pale)}
+
+.pack-target-box strong{display:block;font-size:12px;margin-bottom:6px}
+.pack-card.pack1 .pack-target-box strong{color:var(--color-pack1)}
+.pack-card.pack2 .pack-target-box strong{color:var(--color-pack2)}
+.pack-card.pack3 .pack-target-box strong{color:var(--color-pack3)}
+
+.pack-price-box{
+  background:var(--bg-light);
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+}
+.pack-price-label{font-size:12px;color:var(--text-light);margin-bottom:6px}
+.pack-price-value{
+  font-family:'Noto Serif JP',serif;
+  font-size:30px;
+  font-weight:700;
+  color:var(--navy);
+}
+.pack-price-value .yen{font-size:20px}
+.pack-price-value .month{font-size:14px;color:var(--text-light);font-weight:500}
+.pack-margin-tag{
+  display:inline-block;
+  margin-top:8px;
+  background:var(--gold);
+  color:var(--white);
+  padding:3px 10px;
+  border-radius:10px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.pack-right h4{
   font-size:14px;
   font-weight:700;
   color:var(--navy);
-  margin-bottom:14px;
-  padding-left:10px;
-  border-left:3px solid var(--gold);
+  margin-bottom:18px;
+  padding-left:14px;
+  border-left:4px solid var(--gold);
 }
-.app-item{
+
+.app-list{display:grid;gap:18px}
+.app-card{
   background:var(--bg-cream);
-  padding:14px 18px;
-  border-radius:8px;
-  margin-bottom:8px;
+  border-radius:10px;
+  padding:22px 24px;
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:18px;
+  align-items:start;
 }
+.app-emoji{font-size:32px;text-align:center}
 .app-name{
-  font-size:15px;
+  font-size:17px;
   font-weight:700;
   color:var(--navy);
-  margin-bottom:4px;
+  margin-bottom:6px;
 }
 .app-desc{
   font-size:13px;
   color:var(--text-light);
-  line-height:1.6;
+  line-height:1.8;
+  margin-bottom:10px;
 }
-
-.pack-price{
-  background:var(--bg-light);
-  padding:18px 22px;
-  border-radius:10px;
-  text-align:center;
+.app-output{
+  font-size:12px;
+  color:var(--text);
+  background:var(--white);
+  padding:8px 12px;
+  border-radius:6px;
+  border-left:3px solid var(--gold);
+  line-height:1.7;
 }
-.pack-price-label{
-  font-size:13px;
-  color:var(--text-light);
-  margin-bottom:6px;
-}
-.pack-price-value{
-  font-family:'Noto Serif JP',serif;
-  font-size:28px;
-  font-weight:700;
-  color:var(--navy);
-}
-.pack-price-value .yen{font-size:18px}
-.pack-price-value .month{font-size:14px;color:var(--text-light);font-weight:500}
-.pack-margin{
+.app-output strong{color:var(--navy);font-size:11px;display:block;margin-bottom:2px}
+.app-quote{
+  margin-top:10px;
   font-size:12px;
   color:var(--gold);
-  font-weight:700;
-  margin-top:6px;
+  font-style:italic;
+  font-weight:500;
 }
 
-/* シミュレーター */
+.compare{background:var(--white)}
+.compare-table{
+  max-width:900px;
+  margin:0 auto;
+  background:var(--bg-cream);
+  border-radius:12px;
+  padding:40px 35px;
+}
+.compare-row{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+  align-items:center;
+}
+.compare-row:last-child{border-bottom:none}
+.compare-row.head{
+  font-weight:700;
+  color:var(--navy);
+  font-size:15px;
+  border-bottom:2px solid var(--navy);
+  padding-bottom:14px;
+}
+.compare-row.head .ours{color:var(--gold)}
+.compare-cell{text-align:center;font-size:14px}
+.compare-cell.label{
+  text-align:left;
+  font-weight:500;
+  color:var(--text);
+}
+.compare-mark{font-size:20px;font-weight:700}
+.compare-mark.no{color:#999}
+.compare-mark.yes{color:var(--gold)}
+
+.position-note{
+  max-width:900px;
+  margin:30px auto 0;
+  background:var(--gold-pale);
+  border-left:4px solid var(--gold);
+  padding:25px 30px;
+  border-radius:8px;
+  font-size:14px;
+  line-height:2;
+  color:var(--text);
+}
+.position-note strong{color:var(--navy)}
+
 .simulator{
   background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
   color:var(--white);
@@ -417,9 +510,7 @@ body{
   padding:50px 40px;
   backdrop-filter:blur(10px);
 }
-.sim-row{
-  margin-bottom:30px;
-}
+.sim-row{margin-bottom:30px}
 .sim-row:last-child{margin-bottom:0}
 .sim-label{
   display:flex;justify-content:space-between;align-items:center;
@@ -435,36 +526,29 @@ body{
 }
 .sim-slider{
   -webkit-appearance:none;
-  width:100%;
-  height:8px;
+  width:100%;height:8px;
   border-radius:4px;
   background:rgba(255,255,255,0.2);
-  outline:none;
-  cursor:pointer;
+  outline:none;cursor:pointer;
 }
 .sim-slider::-webkit-slider-thumb{
   -webkit-appearance:none;
   width:24px;height:24px;
   border-radius:50%;
-  background:var(--gold);
-  cursor:pointer;
+  background:var(--gold);cursor:pointer;
   box-shadow:0 4px 12px rgba(208,169,0,0.5);
 }
 .sim-slider::-moz-range-thumb{
   width:24px;height:24px;
   border-radius:50%;
-  background:var(--gold);
-  cursor:pointer;
+  background:var(--gold);cursor:pointer;
   border:none;
   box-shadow:0 4px 12px rgba(208,169,0,0.5);
 }
 .sim-result{
-  margin-top:40px;
-  padding-top:40px;
+  margin-top:40px;padding-top:40px;
   border-top:1px solid rgba(255,255,255,0.2);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
+  display:grid;grid-template-columns:1fr 1fr;gap:30px;
 }
 .sim-result-box{
   background:rgba(208,169,0,0.15);
@@ -490,9 +574,9 @@ body{
   font-size:13px;
   color:rgba(255,255,255,0.7);
   margin-top:20px;
+  line-height:1.9;
 }
 
-/* 販売店メリット */
 .merit{background:var(--bg-cream)}
 .merit-grid{
   display:grid;
@@ -529,16 +613,16 @@ body{
   line-height:1.8;
 }
 
-/* 声 */
-.testimonial{background:var(--white)}
+.testimonial{background:var(--bg-light)}
 .testimonial-card{
-  background:var(--bg-cream);
+  background:var(--white);
   border-left:5px solid var(--gold);
   padding:40px 45px;
   border-radius:8px;
   max-width:800px;
   margin:0 auto;
   position:relative;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
 }
 .testimonial-card::before{
   content:'"';
@@ -551,7 +635,7 @@ body{
   line-height:1;
 }
 .testimonial-quote{
-  font-size:17px;
+  font-size:16px;
   line-height:2;
   color:var(--text);
   margin-bottom:25px;
@@ -564,8 +648,7 @@ body{
 }
 .testimonial-author strong{color:var(--navy);font-size:15px}
 
-/* サポート */
-.support{background:var(--bg-light)}
+.support{background:var(--bg-cream)}
 .support-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -578,10 +661,7 @@ body{
   text-align:center;
   box-shadow:0 2px 10px rgba(0,0,0,0.04);
 }
-.support-icon{
-  font-size:42px;
-  margin-bottom:18px;
-}
+.support-icon{font-size:42px;margin-bottom:18px}
 .support-card h3{
   font-size:17px;
   color:var(--navy);
@@ -594,7 +674,6 @@ body{
   text-align:left;
 }
 
-/* 開発者 */
 .creator{background:var(--white)}
 .creator-card{
   background:var(--bg-cream);
@@ -634,13 +713,10 @@ body{
   color:var(--text);
 }
 
-/* FAQ */
-.faq-list{
-  max-width:800px;
-  margin:0 auto;
-}
+.faq{background:var(--bg-light)}
+.faq-list{max-width:800px;margin:0 auto}
 .faq-item{
-  background:var(--bg-light);
+  background:var(--white);
   margin-bottom:14px;
   border-radius:10px;
   overflow:hidden;
@@ -671,9 +747,7 @@ body{
   color:var(--gold);
   transition:transform 0.3s;
 }
-.faq-item.open .faq-q::after{
-  transform:rotate(45deg);
-}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
 .faq-a{
   padding:0 25px 0 70px;
   font-size:14px;
@@ -685,10 +759,9 @@ body{
 }
 .faq-item.open .faq-a{
   padding:0 25px 22px 70px;
-  max-height:300px;
+  max-height:400px;
 }
 
-/* 最終CTA */
 .final-cta{
   background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
   color:var(--white);
@@ -720,7 +793,6 @@ body{
   color:rgba(255,255,255,0.7);
 }
 
-/* フッター */
 .footer{
   background:var(--navy-dark);
   color:rgba(255,255,255,0.6);
@@ -740,18 +812,22 @@ body{
   margin:0 10px;
 }
 
-/* レスポンシブ */
 @media (max-width:768px){
   .hero{padding:100px 20px 60px}
-  .hero h1{font-size:30px;line-height:1.5}
+  .hero h1{font-size:28px;line-height:1.5}
   .hero-sub{font-size:15px}
   .hero-trust{gap:12px;font-size:12px}
   .section{padding:60px 20px}
-  .section-title{font-size:26px}
+  .section-title{font-size:24px}
   .section-sub{font-size:14px;margin-bottom:40px}
+  .concept-box{padding:35px 25px}
+  .concept-quote{font-size:18px}
   .problem-grid{grid-template-columns:1fr;gap:20px}
-  .pack-grid{grid-template-columns:1fr;gap:24px}
-  .pack-card{padding:30px 24px}
+  .pack-card{grid-template-columns:1fr;padding:35px 25px;gap:30px}
+  .pack-left{position:static}
+  .app-card{grid-template-columns:1fr;text-align:center;padding:20px}
+  .app-emoji{margin-bottom:8px}
+  .axes-grid{grid-template-columns:1fr;gap:18px}
   .mechanism-row{grid-template-columns:1fr;gap:14px}
   .mechanism-arrow{transform:rotate(90deg)}
   .merit-grid{grid-template-columns:1fr;gap:16px}
@@ -761,19 +837,23 @@ body{
   .creator-photo{margin:0 auto;width:140px;height:140px;font-size:42px}
   .sim-result{grid-template-columns:1fr;gap:18px}
   .sim-result-value{font-size:28px}
-  .final-cta h2{font-size:26px}
+  .final-cta h2{font-size:24px}
   .final-cta p{font-size:15px}
   .testimonial-card{padding:30px 25px}
-  .testimonial-quote{font-size:15px}
+  .testimonial-quote{font-size:14px}
   .btn-primary,.btn-secondary{font-size:15px;padding:15px 28px}
   .header-cta{font-size:11px;padding:6px 14px}
   .logo{font-size:16px}
+  .compare-table{padding:25px 18px}
+  .compare-row{grid-template-columns:1.2fr 0.8fr 0.8fr;gap:8px;font-size:13px}
+  .compare-row.head{font-size:12px}
+  .compare-cell{font-size:12px}
+  .position-note{padding:20px 22px;font-size:13px;margin:20px auto 0}
 }
 </style>
 </head>
 <body>
 
-<!-- ヘッダー -->
 <header class="header">
   <div class="header-inner">
     <div class="logo"><span class="logo-mark">●</span> 販売店パートナーみっけ</div>
@@ -781,32 +861,52 @@ body{
   </div>
 </header>
 
-<!-- ヒーロー -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge">CASIO楽一販売店パートナー向け 新提案</div>
     <h1 class="serif">
-      楽一の隣に、<br>
-      もう1本<span class="accent">サブスクの柱</span>を<br>
-      立てませんか
+      中小企業を、<br>
+      もっと<span class="accent">自慢できる会社</span>に。
     </h1>
     <p class="hero-sub">
-      販売店のお客様が抱える「困りごと」を、業種別アプリで解決。<br>
-      販売管理の隣に、毎月のストック収益が積み上がる新しい商材です。
+      お客様・取引先・求職者・金融機関が<br>
+      「この会社、進んでるな」と感じる成果物を、<br>
+      AIが毎月生み出します。
     </p>
     <div class="hero-trust">
-      <div class="hero-trust-item">製造・卸・サービス・建設の4業種対応</div>
-      <div class="hero-trust-item">12アプリの月額パッケージ</div>
+      <div class="hero-trust-item">対外評価が上がる3パッケージ</div>
+      <div class="hero-trust-item">9アプリすべて成果物アプリ</div>
       <div class="hero-trust-item">サポートは開発元が一次対応</div>
     </div>
     <div class="hero-cta-group">
       <a href="#cta" class="btn-primary">販売店説明会に申し込む</a>
-      <a href="#packages" class="btn-secondary">業種パックを見る</a>
+      <a href="#packages" class="btn-secondary">パッケージを見る</a>
     </div>
   </div>
 </section>
 
-<!-- 問題提起 -->
+<section class="section concept">
+  <div class="section-inner">
+    <h2 class="section-title">便利アプリは、もう要らない。</h2>
+    <div class="section-line"></div>
+    <p class="section-sub">中小企業の社長が本当に欲しているのは、<br>「会社の評価が上がる成果物」です。</p>
+
+    <div class="concept-box">
+      <p class="concept-quote">
+        日報が楽になる。見積りが速くなる。<br>
+        それは「便利」かもしれません。<br>
+        でも、3ヶ月後にはきっと忘れています。<br><br>
+        中小企業の社長が、本当に喜び、<br>
+        対外的にも<span class="em">「自慢できる」</span>のは、<br>
+        会社の評価が上がる<span class="em">「成果物」</span>です。
+      </p>
+      <p class="concept-text">
+        取引先に毎月届く立派なレポート。求職者の心を動かす採用ストーリー。金融機関を唸らせる事業計画書。これらはすべて「対外的に評価が上がる成果物」です。私たちは便利グッズではなく、中小企業の<strong style="color:var(--navy)">「会社の見え方」</strong>そのものを変えるアプリ群を提供します。
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="section problem">
   <div class="section-inner">
     <h2 class="section-title">販売店オーナーの<br>このお悩み、解決できます</h2>
@@ -820,25 +920,50 @@ body{
         <p>値引き合戦で疲弊。サブスク文化への切り替えが進まない。1社あたりの月額が伸び悩んでいる。</p>
       </div>
       <div class="problem-card">
+        <div class="problem-icon">⚔️</div>
+        <h3>販売管理・財務会計だけでは<br>差別化できない</h3>
+        <p>楽一・弥生など販売管理／会計／給与・勤怠の世界では機能比較になり、価格勝負になりがち。</p>
+      </div>
+      <div class="problem-card">
         <div class="problem-icon">🚪</div>
         <h3>導入から3年経った客先に、<br>訪問する理由がない</h3>
         <p>雑談で終わる定期訪問。営業マンも「次の提案ネタ」がなく、関係維持だけになっている。</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon">⚔️</div>
-        <h3>弥生・freee・マネフォとの<br>差別化軸が作れない</h3>
-        <p>機能比較になると価格勝負。「サブスクで売れ」と本部に言われても武器がない状態。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 仕組み -->
+<section class="section value-axes">
+  <div class="section-inner">
+    <h2 class="section-title">3つの相手から<br>「評価」を引き出す</h2>
+    <div class="section-line"></div>
+    <p class="section-sub">中小企業経営者が本当に評価されたい、<br>3つの相手に、AIアプリで届けます</p>
+
+    <div class="axes-grid">
+      <div class="axes-card">
+        <div class="axes-icon">①</div>
+        <h3 class="serif">取引先・お客様</h3>
+        <p>「この会社、こんなに丁寧に対応してくれるんだ」「他社にはないレベルだ」。月次レポートや提案書、丁寧な挨拶状で、取引を深く・長く・広くする評価を引き出します。</p>
+      </div>
+      <div class="axes-card">
+        <div class="axes-icon">②</div>
+        <h3 class="serif">求職者・社員</h3>
+        <p>「ここで働きたい」「この会社、進んでるな」。社員紹介ストーリー、会社案内、業種別求人広告で、応募率・定着率を変える評価を引き出します。</p>
+      </div>
+      <div class="axes-card">
+        <div class="axes-icon">③</div>
+        <h3 class="serif">地域・金融・行政</h3>
+        <p>「DX進んでますね」「補助金事例として紹介したい」。補助金申請書、SNS発信、事業計画書で、融資・補助金・地域評価が変わる成果を引き出します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="section-inner">
     <h2 class="section-title">販売店パートナーパッケージとは</h2>
     <div class="section-line"></div>
-    <p class="section-sub">販売店のお客様の困りごとを解決するアプリを、<br>販売店経由でサブスク提供する仕組みです</p>
+    <p class="section-sub">中小企業の対外評価を上げるアプリ群を、<br>販売店経由でサブスク提供する仕組みです</p>
 
     <div class="mechanism-flow">
       <div class="mechanism-row">
@@ -850,8 +975,8 @@ body{
         <div class="mechanism-arrow">→</div>
         <div class="mechanism-box center">
           <span class="label">お客様</span>
-          <h4>業種別アプリで<br>困りごとを解決</h4>
-          <p>製造・卸・サービス・建設、それぞれの現場の悩みに直撃。</p>
+          <h4>毎月、自慢できる<br>成果物が生まれる</h4>
+          <p>取引先・求職者・金融機関へ届く成果物が、AIで毎月生成される。</p>
         </div>
         <div class="mechanism-arrow">→</div>
         <div class="mechanism-box">
@@ -869,194 +994,243 @@ body{
   </div>
 </section>
 
-<!-- 4つの業種パック -->
 <section class="section packages" id="packages">
   <div class="section-inner">
-    <h2 class="section-title">4つの業種パッケージ</h2>
+    <h2 class="section-title">3つの「自慢できる」パッケージ</h2>
     <div class="section-line"></div>
-    <p class="section-sub">販売店のお客様の業種に合わせて、<br>困りごとを解決する3アプリをセットでご提供</p>
+    <p class="section-sub">中小企業が本当に評価されたい3つの相手に、<br>それぞれ最適化した成果物アプリ群</p>
 
-    <div class="pack-grid">
+    <div class="pack-card pack1">
+      <div class="pack-left">
+        <div class="pack-icon-large">💼</div>
+        <div class="pack-title serif">取引先評価<br>UPパック</div>
+        <p class="pack-tagline">お客様・取引先からの<br>「この会社、すごい」を引き出す</p>
 
-      <!-- 製造業パック -->
-      <div class="pack-card seizo">
-        <div class="pack-header">
-          <div class="pack-icon">🏭</div>
-          <div class="pack-title serif">製造業パック</div>
-        </div>
-        <div class="pack-target">
-          町工場、機械加工、金属加工、食品加工など<br>従業員5〜30人規模の中小製造業向け
-        </div>
-
-        <div class="pack-troubles">
-          <div class="pack-troubles-title">こんな困りごとを解決します</div>
-          <ul class="pack-troubles-list">
-            <li>日報を書くのが面倒で続かない</li>
-            <li>見積もりに毎回1時間かかる</li>
-            <li>求人を出しても人が来ない</li>
-          </ul>
+        <div class="pack-target-box">
+          <strong>こんな会社におすすめ</strong>
+          製造業・卸売業・建設業・サービス業など、固定の取引先・お得意様を持つ会社。「他社との差別化」「取引深化」「紹介発生」を実現したい中小企業。
         </div>
 
-        <div class="pack-apps">
-          <div class="pack-apps-title">解決アプリ 3本</div>
-          <div class="app-item">
-            <div class="app-name">📋 日報みっけ</div>
-            <div class="app-desc">現場写真3枚をアップ → A4日報を自動生成。月末の転記もラクに。</div>
-          </div>
-          <div class="app-item">
-            <div class="app-name">💰 見積みっけ</div>
-            <div class="app-desc">仕様メモを貼るだけ → 過去案件を参照した概算見積を3分で。</div>
-          </div>
-          <div class="app-item">
-            <div class="app-name">👥 求人みっけ</div>
-            <div class="app-desc">会社の強み5項目入力 → Indeed風の求人タイトルと本文を自動生成。</div>
-          </div>
-        </div>
-
-        <div class="pack-price">
+        <div class="pack-price-box">
           <div class="pack-price-label">お客様向け月額</div>
           <div class="pack-price-value"><span class="yen">¥</span>5,980<span class="month">/月</span></div>
-          <div class="pack-margin">販売店マージン 30% (月¥1,794/社)</div>
+          <div class="pack-margin-tag">販売店マージン 30%</div>
         </div>
       </div>
 
-      <!-- 卸売業パック -->
-      <div class="pack-card oroshi">
-        <div class="pack-header">
-          <div class="pack-icon">📦</div>
-          <div class="pack-title serif">卸売業パック</div>
-        </div>
-        <div class="pack-target">
-          食品卸、資材卸、機械工具卸、雑貨卸など<br>取引先50〜500社規模の地域卸売業向け
-        </div>
-
-        <div class="pack-troubles">
-          <div class="pack-troubles-title">こんな困りごとを解決します</div>
-          <ul class="pack-troubles-list">
-            <li>取引先別の案内文を書くのが面倒</li>
-            <li>休眠顧客が放置されている</li>
-            <li>営業日報が形骸化している</li>
-          </ul>
-        </div>
-
-        <div class="pack-apps">
-          <div class="pack-apps-title">解決アプリ 3本</div>
-          <div class="app-item">
-            <div class="app-name">📨 商品案内みっけ</div>
-            <div class="app-desc">新商品の特徴を入力 → 取引先業種別(飲食/小売/法人)の案内文を一括生成。</div>
+      <div class="pack-right">
+        <h4>収録アプリ 3本</h4>
+        <div class="app-list">
+          <div class="app-card">
+            <div class="app-emoji">📊</div>
+            <div>
+              <div class="app-name">月次レポートみっけ</div>
+              <div class="app-desc">日々のメモや取引データから、取引先向けの月次PDFレポートを生成。</div>
+              <div class="app-output"><strong>成果物</strong>「今月のご報告」というPDFが、毎月取引先に届く</div>
+              <div class="app-quote">"AIで毎月レポート出してます" と言える</div>
+            </div>
           </div>
-          <div class="app-item">
-            <div class="app-name">🔔 お客様みっけ</div>
-            <div class="app-desc">顧客CSV → 半年取引のない休眠顧客への個別フォロー文を一気に作成。</div>
+          <div class="app-card">
+            <div class="app-emoji">📝</div>
+            <div>
+              <div class="app-name">提案書みっけ</div>
+              <div class="app-desc">お客様情報と商品情報から、A4・1枚の提案書を即生成。</div>
+              <div class="app-output"><strong>成果物</strong>訪問時に置いて帰れる、お客様ごとの個別提案書</div>
+              <div class="app-quote">"お客様ごとに、提案書を毎回作ってます" と言える</div>
+            </div>
           </div>
-          <div class="app-item">
-            <div class="app-name">🎤 営業日報みっけ</div>
-            <div class="app-desc">音声入力 → 営業日報＋次回アクション提案。車の中で日報完成。</div>
+          <div class="app-card">
+            <div class="app-emoji">💌</div>
+            <div>
+              <div class="app-name">ご挨拶みっけ</div>
+              <div class="app-desc">取引履歴から、年賀・暑中見舞・記念日のお手紙を個別生成。</div>
+              <div class="app-output"><strong>成果物</strong>取引先ごとに最適化された、心のこもったご挨拶状</div>
+              <div class="app-quote">"お客様一人ひとりに、心のこもった挨拶を出してます" と言える</div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="pack-price">
+    <div class="pack-card pack2">
+      <div class="pack-left">
+        <div class="pack-icon-large">👥</div>
+        <div class="pack-title serif">採用力<br>UPパック</div>
+        <p class="pack-tagline">求職者・社員からの<br>「ここで働きたい」を引き出す</p>
+
+        <div class="pack-target-box">
+          <strong>こんな会社におすすめ</strong>
+          人手不足・採用難に悩む中小企業。求人広告を出しても応募が来ない、若手が定着しない、会社の魅力をうまく伝えられないとお悩みの会社。
+        </div>
+
+        <div class="pack-price-box">
           <div class="pack-price-label">お客様向け月額</div>
           <div class="pack-price-value"><span class="yen">¥</span>5,980<span class="month">/月</span></div>
-          <div class="pack-margin">販売店マージン 30% (月¥1,794/社)</div>
+          <div class="pack-margin-tag">販売店マージン 30%</div>
         </div>
       </div>
 
-      <!-- サービス業パック -->
-      <div class="pack-card service">
-        <div class="pack-header">
-          <div class="pack-icon">💇</div>
-          <div class="pack-title serif">サービス業パック</div>
-        </div>
-        <div class="pack-target">
-          飲食店、美容室、整備工場、修理店など<br>地域密着型のサービス業向け
-        </div>
-
-        <div class="pack-troubles">
-          <div class="pack-troubles-title">こんな困りごとを解決します</div>
-          <ul class="pack-troubles-list">
-            <li>SNS・LINE配信の文章を書くのが面倒</li>
-            <li>常連客が来なくなっても気づかない</li>
-            <li>口コミ返信が後回しになる</li>
-          </ul>
-        </div>
-
-        <div class="pack-apps">
-          <div class="pack-apps-title">解決アプリ 3本</div>
-          <div class="app-item">
-            <div class="app-name">📱 SNSみっけ</div>
-            <div class="app-desc">今日の出来事1行入力 → 業態別(飲食/美容/整備)のSNS投稿文を生成。</div>
+      <div class="pack-right">
+        <h4>収録アプリ 3本</h4>
+        <div class="app-list">
+          <div class="app-card">
+            <div class="app-emoji">🎤</div>
+            <div>
+              <div class="app-name">採用ストーリーみっけ</div>
+              <div class="app-desc">社員インタビュー音声から、採用ページ用の社員紹介記事を生成。</div>
+              <div class="app-output"><strong>成果物</strong>Wantedly・採用ページに載せる、本物の社員ストーリー</div>
+              <div class="app-quote">"うちの社員紹介、AIで作ってます" と言える</div>
+            </div>
           </div>
-          <div class="app-item">
-            <div class="app-name">💌 常連みっけ</div>
-            <div class="app-desc">来店履歴CSV → 来なくなった常連へのお声がけLINE文を個別に生成。</div>
+          <div class="app-card">
+            <div class="app-emoji">🏢</div>
+            <div>
+              <div class="app-name">会社案内みっけ</div>
+              <div class="app-desc">会社の特徴と歴史から、ホームページ用の会社案内コンテンツを生成。</div>
+              <div class="app-output"><strong>成果物</strong>訪問者が「いい会社だな」と感じる会社案内ページ</div>
+              <div class="app-quote">"会社案内、AIでリニューアルしました" と言える</div>
+            </div>
           </div>
-          <div class="app-item">
-            <div class="app-name">⭐ 口コミみっけ</div>
-            <div class="app-desc">口コミを貼るだけ → 業態別の感謝返信文。星1の辛口にも丁寧に対応。</div>
+          <div class="app-card">
+            <div class="app-emoji">📢</div>
+            <div>
+              <div class="app-name">求人みっけ</div>
+              <div class="app-desc">会社の強み5項目から、Indeed・ハローワーク・SNS用の求人広告を生成。</div>
+              <div class="app-output"><strong>成果物</strong>応募が来る、媒体別の求人広告</div>
+              <div class="app-quote">"求人もAIで作ってます" と言える</div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="pack-price">
+    <div class="pack-card pack3">
+      <div class="pack-left">
+        <div class="pack-icon-large">🏦</div>
+        <div class="pack-title serif">地域・金融<br>評価UPパック</div>
+        <p class="pack-tagline">地域・金融機関・行政からの<br>「進んでるな」を引き出す</p>
+
+        <div class="pack-target-box">
+          <strong>こんな会社におすすめ</strong>
+          補助金・融資・行政との関わりが多い中小企業。地域での認知度を上げたい、金融機関からの評価を上げたい、補助金を取りたいとお考えの会社。
+        </div>
+
+        <div class="pack-price-box">
           <div class="pack-price-label">お客様向け月額</div>
           <div class="pack-price-value"><span class="yen">¥</span>5,980<span class="month">/月</span></div>
-          <div class="pack-margin">販売店マージン 30% (月¥1,794/社)</div>
+          <div class="pack-margin-tag">販売店マージン 30%</div>
         </div>
       </div>
 
-      <!-- 建設業パック -->
-      <div class="pack-card kensetsu">
-        <div class="pack-header">
-          <div class="pack-icon">🏗</div>
-          <div class="pack-title serif">建設業パック</div>
-        </div>
-        <div class="pack-target">
-          工務店、リフォーム会社、設備工事、内装工事など<br>地域密着型の中小建設・工事業向け
-        </div>
-
-        <div class="pack-troubles">
-          <div class="pack-troubles-title">こんな困りごとを解決します</div>
-          <ul class="pack-troubles-list">
-            <li>現場写真がスマホに溜まったままになっている</li>
-            <li>小工事の見積もりに時間がかかる</li>
-            <li>施主への進捗連絡が後回しでクレームになる</li>
-          </ul>
-        </div>
-
-        <div class="pack-apps">
-          <div class="pack-apps-title">解決アプリ 3本</div>
-          <div class="app-item">
-            <div class="app-name">📷 現場写真みっけ</div>
-            <div class="app-desc">現場写真をアップ → 工事日報＋施主向け進捗報告書を同時生成。</div>
+      <div class="pack-right">
+        <h4>収録アプリ 3本</h4>
+        <div class="app-list">
+          <div class="app-card">
+            <div class="app-emoji">📑</div>
+            <div>
+              <div class="app-name">補助金申請みっけ</div>
+              <div class="app-desc">事業内容を音声入力するだけで、IT導入補助金・ものづくり補助金の申請書ドラフトを生成。</div>
+              <div class="app-output"><strong>成果物</strong>専門家レビューに耐える、構造化された補助金申請書</div>
+              <div class="app-quote">"AIで補助金通しました" と言える</div>
+            </div>
           </div>
-          <div class="app-item">
-            <div class="app-name">📐 工事見積みっけ</div>
-            <div class="app-desc">仕様メモを貼る → 工事概算見積を即出力。小工事の対応速度が劇的アップ。</div>
+          <div class="app-card">
+            <div class="app-emoji">📱</div>
+            <div>
+              <div class="app-name">SNS発信みっけ</div>
+              <div class="app-desc">今日の出来事1行から、Instagram・Facebookの発信文を業種別に生成。</div>
+              <div class="app-output"><strong>成果物</strong>地域に届く、会社の活動発信コンテンツ</div>
+              <div class="app-quote">"会社の発信、AIで毎日やってます" と言える</div>
+            </div>
           </div>
-          <div class="app-item">
-            <div class="app-name">📲 施主LINEみっけ</div>
-            <div class="app-desc">進捗1行入力 → 施主向けの丁寧な連絡文を自動生成。クレーム激減。</div>
+          <div class="app-card">
+            <div class="app-emoji">📈</div>
+            <div>
+              <div class="app-name">経営計画みっけ</div>
+              <div class="app-desc">業績データと方針から、銀行提出用・補助金審査用の事業計画書を生成。</div>
+              <div class="app-output"><strong>成果物</strong>金融機関に提出できる、構造化された事業計画書</div>
+              <div class="app-quote">"事業計画もAIでまとめてます" と言える</div>
+            </div>
           </div>
-        </div>
-
-        <div class="pack-price">
-          <div class="pack-price-label">お客様向け月額</div>
-          <div class="pack-price-value"><span class="yen">¥</span>5,980<span class="month">/月</span></div>
-          <div class="pack-margin">販売店マージン 30% (月¥1,794/社)</div>
         </div>
       </div>
+    </div>
 
+    <p style="text-align:center;margin-top:40px;font-size:15px;color:var(--text);line-height:1.9">
+      <strong style="color:var(--navy);font-size:18px">3パック全部入りバンドル割：月額 ¥12,800</strong><br>
+      <span style="color:var(--text-light);font-size:13px">(通常 ¥17,940 → 28%OFF・販売店マージン30%)</span>
+    </p>
+  </div>
+</section>
+
+<section class="section compare">
+  <div class="section-inner">
+    <h2 class="section-title">販売管理ソフトには無い<br>新しい価値領域</h2>
+    <div class="section-line"></div>
+    <p class="section-sub">楽一・弥生など既存の販売管理／会計／給与勤怠ソフトでは<br>カバーできない「対外評価」の領域を担います</p>
+
+    <div class="compare-table">
+      <div class="compare-row head">
+        <div class="compare-cell label">機能・価値領域</div>
+        <div class="compare-cell">楽一・弥生など<br>既存ソフト</div>
+        <div class="compare-cell ours">販売店<br>パートナーみっけ</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">販売管理・受発注・在庫</div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+        <div class="compare-cell"><span class="compare-mark no">−</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">財務会計・給与・勤怠管理</div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+        <div class="compare-cell"><span class="compare-mark no">−</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">取引先向け月次レポート生成</div>
+        <div class="compare-cell"><span class="compare-mark no">×</span></div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">採用ストーリー記事生成</div>
+        <div class="compare-cell"><span class="compare-mark no">×</span></div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">補助金申請書ドラフト</div>
+        <div class="compare-cell"><span class="compare-mark no">×</span></div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">SNS発信コンテンツ生成</div>
+        <div class="compare-cell"><span class="compare-mark no">×</span></div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">事業計画書生成</div>
+        <div class="compare-cell"><span class="compare-mark no">×</span></div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell label">対外的な「会社の見え方」改善</div>
+        <div class="compare-cell"><span class="compare-mark no">×</span></div>
+        <div class="compare-cell"><span class="compare-mark yes">◎</span></div>
+      </div>
+    </div>
+
+    <div class="position-note">
+      販売店が日々取り扱われている <strong>楽一（販売管理）／弥生（財務会計）／給与・勤怠ソフト</strong> は、社内のオペレーションを支える「中の業務」を担う商材です。<br>
+      一方、本パッケージが担うのは、社外への見え方を変える <strong>「外向き」の領域</strong>。<br>
+      つまり既存商材と<strong>競合せず、補完し合う関係</strong>として、販売店の月額売上を積み上げる新しい柱になります。
     </div>
   </div>
 </section>
 
-<!-- 収益シミュレーター -->
 <section class="section simulator" id="simulator">
   <div class="section-inner">
     <h2 class="section-title">販売店の収益シミュレーター</h2>
     <div class="section-line"></div>
     <p class="section-sub" style="color:rgba(255,255,255,0.85)">
-      保有する楽一ユーザー数と導入率を動かして、<br>
+      保有楽一ユーザー数と契約パック数を動かして、<br>
       毎月積み上がるストック収益をご確認ください
     </p>
 
@@ -1077,79 +1251,85 @@ body{
         <input type="range" min="10" max="60" value="30" step="5" class="sim-slider" id="rate">
       </div>
 
+      <div class="sim-row">
+        <div class="sim-label">
+          <span>1社平均契約パック数</span>
+          <span class="value"><span id="pack-val">1.5</span>パック</span>
+        </div>
+        <input type="range" min="10" max="30" value="15" step="1" class="sim-slider" id="packs">
+      </div>
+
       <div class="sim-result">
         <div class="sim-result-box">
           <div class="sim-result-label">月額ストック収益</div>
-          <div class="sim-result-value"><span class="yen">¥</span><span id="monthly">161,460</span></div>
+          <div class="sim-result-value"><span class="yen">¥</span><span id="monthly">242,190</span></div>
         </div>
         <div class="sim-result-box">
           <div class="sim-result-label">年間ストック収益</div>
-          <div class="sim-result-value"><span class="yen">¥</span><span id="yearly">1,937,520</span></div>
+          <div class="sim-result-value"><span class="yen">¥</span><span id="yearly">2,906,280</span></div>
         </div>
       </div>
       <p class="sim-note">
-        ※ 月額¥5,980 × 販売店マージン30% = 1社あたり月¥1,794の販売店取り分で計算<br>
+        ※ 月額¥5,980/パック × 販売店マージン30% × 平均契約パック数 で計算<br>
         ※ 楽一の販売収益とは別軸の、新しいストック収益柱として積み上がります
       </p>
     </div>
   </div>
 </section>
 
-<!-- 販売店メリット -->
 <section class="section merit">
   <div class="section-inner">
-    <h2 class="section-title">販売店オーナーの<br>5つのメリット</h2>
+    <h2 class="section-title">販売店オーナーの<br>6つのメリット</h2>
     <div class="section-line"></div>
-    <p class="section-sub">「売って終わり」ではない、継続収益の仕組みです</p>
+    <p class="section-sub">「儲かる×売れる×解約されない」サブスクの仕組みです</p>
 
     <div class="merit-grid">
       <div class="merit-card">
         <div class="merit-num">1</div>
         <div class="merit-content">
-          <h3>ストック収益が純増する</h3>
-          <p>既存の楽一ユーザーへの提案だけで月額が積み上がる。新規開拓ゼロでも継続収益が増えます。</p>
+          <h3>既存商材と競合しない新領域</h3>
+          <p>楽一・弥生など既存の販売管理／会計商材とは別軸の「対外評価」領域。お客様への提案がバッティングせず、純粋な追加売上になります。</p>
         </div>
       </div>
       <div class="merit-card">
         <div class="merit-num">2</div>
         <div class="merit-content">
-          <h3>楽一の解約率が下がる</h3>
-          <p>パッケージとセット契約することで、楽一単体での解約が起きにくくなる。顧客LTVが伸びます。</p>
+          <h3>解約されにくい「成果物アプリ」</h3>
+          <p>毎月成果物が世に出るため、社長が「使い続ける理由」を体感できる。便利グッズと違い継続率が圧倒的。</p>
         </div>
       </div>
       <div class="merit-card">
         <div class="merit-num">3</div>
         <div class="merit-content">
-          <h3>毎月の訪問理由が生まれる</h3>
-          <p>新機能リリースやテンプレ追加で、定期訪問の口実が常に補充される。営業マンが動きやすくなります。</p>
+          <h3>1社あたり最大3パック契約も可能</h3>
+          <p>取引先評価・採用力・地域評価。3軸で価値が異なるため、1社で複数パック契約が自然に発生します。</p>
         </div>
       </div>
       <div class="merit-card">
         <div class="merit-num">4</div>
         <div class="merit-content">
           <h3>新人営業マンが戦力になる</h3>
-          <p>機能説明トーク不要。社長の前でアプリを動かすだけで即決が取れる。教育コストが下がります。</p>
+          <p>機能説明トーク不要。「社長、毎月取引先にレポート出せたら、どうですか?」だけで話が始まります。</p>
         </div>
       </div>
       <div class="merit-card">
         <div class="merit-num">5</div>
         <div class="merit-content">
-          <h3>競合との差別化軸ができる</h3>
-          <p>弥生・freee・マネフォにはない「業種別お悩み解決アプリ」で、価格競争から抜け出せます。</p>
+          <h3>毎月の訪問理由が自動で生まれる</h3>
+          <p>新機能リリースやテンプレ追加で、定期訪問の口実が常に補充される。営業マンが動きやすくなります。</p>
         </div>
       </div>
       <div class="merit-card">
         <div class="merit-num">6</div>
         <div class="merit-content">
-          <h3>新規開拓の入口商材になる</h3>
-          <p>「アプリだけ試したい」という非楽一ユーザーにも提案可能。半年後に楽一へ繋ぐ動線が作れます。</p>
+          <h3>非楽一ユーザーへの新規開拓商材に</h3>
+          <p>「アプリだけ試したい」という他社ソフトユーザーにも提案可能。半年後に楽一へ繋ぐ動線が作れます。</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 声 -->
 <section class="section testimonial">
   <div class="section-inner">
     <h2 class="section-title">先行ご紹介した<br>販売店オーナーの反応</h2>
@@ -1157,9 +1337,10 @@ body{
 
     <div class="testimonial-card">
       <p class="testimonial-quote">
-        「楽一の値引き合戦に疲れていた中で、これは助かります。<br><br>
-        うちは保有300社のうち、製造業と工事業が中心。営業マンが訪問先で『写真3枚撮ってください』と言って日報が出てきたら、絶対に社長は驚く。雑談で終わっていた訪問が、契約の話に変わるイメージが湧きました。<br><br>
-        営業マンの教育コストも下がるし、何より<strong style="color:var(--navy)">楽一とは別軸の月額が積み上がる</strong>のが、本部としては一番ありがたいです。」
+        「これは、楽一・弥生とまったくバッティングしない商材ですね。<br><br>
+        うちの楽一ユーザー、約300社のうち、半分以上が『取引先への報告』『採用』『補助金』のどれかで悩んでます。それぞれに『成果物』が出るアプリは、絶対に喜ばれる。<br><br>
+        何より、<strong style="color:var(--navy)">『AIで毎月レポート出してます』と社長が自慢できる</strong>のが大きい。便利グッズだと『ふーん』で終わりますが、これは『私もやってみたい』『うちもやってください』が連鎖する。<br><br>
+        営業マンが訪問する理由が自然に生まれて、しかもサポートは開発元持ち。これは本気で取り組みます。」
       </p>
       <p class="testimonial-author">
         <strong>地域系販売店オーナー A様</strong><br>
@@ -1169,7 +1350,6 @@ body{
   </div>
 </section>
 
-<!-- サポート -->
 <section class="section support">
   <div class="section-inner">
     <h2 class="section-title">販売店サポート体制</h2>
@@ -1180,7 +1360,7 @@ body{
       <div class="support-card">
         <div class="support-icon">📚</div>
         <h3>営業ツールキット</h3>
-        <p>業種別チラシ(PDF・印刷可)、提案台本(30分/60分版)、業種別90秒デモ動画、販売店名カスタムLPまで一式ご提供。営業マンが「すぐ動ける」状態でお渡しします。</p>
+        <p>パック別チラシ(PDF・印刷可)、提案台本(30分/60分版)、パック別90秒デモ動画、販売店名カスタムLPまで一式ご提供。営業マンが「すぐ動ける」状態でお渡しします。</p>
       </div>
       <div class="support-card">
         <div class="support-icon">🎓</div>
@@ -1196,7 +1376,6 @@ body{
   </div>
 </section>
 
-<!-- 開発者 -->
 <section class="section creator">
   <div class="section-inner">
     <h2 class="section-title">開発者ご紹介</h2>
@@ -1205,28 +1384,35 @@ body{
     <div class="creator-card">
       <div class="creator-photo">松本</div>
       <div class="creator-content">
-        <h3 class="serif">松本 芳也</h3>
+        <h3 class="serif">松本 由也</h3>
         <div class="creator-role">Smile Plus Consulting 代表 / みっけシリーズ開発者</div>
         <p>
           中小企業のWebマーケティング・AI活用支援を20年以上。<br>
           「考えるを、ひとりにしない」を開発コンセプトに、業種特化型のAIアプリ「みっけシリーズ」を60本以上リリース。<br>
-          税理士事務所、製造業、飲食業、美容業、士業など幅広い業種で導入実績があり、<strong style="color:var(--navy)">中小企業の現場の困りごとを、AIで解決する設計</strong>に強みを持ちます。
+          税理士事務所、製造業、飲食業、美容業、士業など幅広い業種で導入実績があり、<strong style="color:var(--navy)">中小企業のブランド価値を上げるAI活用</strong>に強みを持ちます。
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section">
+<section class="section faq">
   <div class="section-inner" style="max-width:800px">
     <h2 class="section-title">よくあるご質問</h2>
     <div class="section-line"></div>
 
     <div class="faq-list">
       <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">楽一や弥生の販売とバッティングしませんか？</div>
+        <div class="faq-a">バッティングしません。楽一や弥生は「販売管理／財務会計／給与・勤怠」など社内オペレーションを支える商材ですが、本パッケージは「取引先・求職者・金融機関への対外発信」を担う領域。価値の方向がまったく異なるため、競合せず、むしろ補完商材として機能します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">本当に「便利アプリ」ではないと言えますか？</div>
+        <div class="faq-a">はい。9アプリすべてに「対外的に世に出る成果物」が出ることを設計の前提にしています。月次レポートは取引先に届き、採用ストーリーは求人ページに載り、補助金申請書は審査機関に提出されます。社内で完結する「便利機能」ではなく、社外への発信物そのものを作るアプリ群です。</div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">ITに弱い営業マンでも売れますか？</div>
-        <div class="faq-a">機能説明は不要です。お客様の前でアプリを動かして「これ便利でしょう」と見せるだけ。新人営業マンでも初訪問から提案できる設計になっています。営業ツールキットの提案台本に従って進めれば、契約まで一直線です。</div>
+        <div class="faq-a">機能説明は不要です。「社長、毎月取引先にレポート出せたら、どうですか?」「採用、応募来ますか?」「補助金、取れてますか?」この3つのどれかで会話は始まります。新人営業マンでも初訪問から提案できる設計です。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">お客様サポートは誰がやりますか？</div>
@@ -1234,15 +1420,15 @@ body{
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">楽一以外のユーザーにも売れますか？</div>
-        <div class="faq-a">はい、可能です。むしろ「アプリだけ試したい」という弥生・freee・マネフォユーザーへの新規開拓商材としても活用できます。アプリで関係性ができた半年後に、楽一への切替提案へ繋ぐ動線が作れます。</div>
+        <div class="faq-a">はい、可能です。むしろ「アプリだけ試したい」という他社販売管理ソフトユーザーへの新規開拓商材としても活用できます。アプリで関係性ができた半年後に、楽一への切替提案へ繋ぐ動線が作れます。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">解約はどのように扱われますか？</div>
-        <div class="faq-a">月単位での解約が可能です。お客様が解約された場合、その月から販売店マージンは計上されません。ただし業種別アプリは「月1回以上必ず使う設計」のため、解約率は低く推移する想定です。</div>
+        <div class="faq-a">月単位での解約が可能です。お客様が解約された場合、その月から販売店マージンは計上されません。ただし「対外的な成果物」が毎月生まれるため、解約率は低く推移する想定です。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">4業種すべて取り扱う必要がありますか？</div>
-        <div class="faq-a">いいえ、保有顧客の業種構成に合わせて、1パックから取扱可能です。「まずは製造業パックだけ」「製造と建設の2パック」といった部分導入もご相談に応じます。</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">3パックすべて取り扱う必要がありますか？</div>
+        <div class="faq-a">いいえ、保有顧客の特性に合わせて、1パックから取扱可能です。「まずは取引先評価UPパックだけ」「採用に困るお客様が多いので採用力UPパックから」といった部分導入もご相談に応じます。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">いつから取り扱えますか？</div>
@@ -1256,9 +1442,11 @@ body{
   </div>
 </section>
 
-<!-- 最終CTA -->
 <section class="final-cta" id="cta">
-  <h2 class="serif">楽一の隣に、<br>もう1本の柱を立てましょう。</h2>
+  <h2 class="serif">
+    お客様を、<br>
+    自慢できる会社に変えませんか。
+  </h2>
   <p>
     まずは販売店説明会(オンライン60分・無料)で、<br>
     実際のアプリの動きと、貴社にとっての収益試算をご覧ください。
@@ -1270,10 +1458,9 @@ body{
   </p>
 </section>
 
-<!-- フッター -->
 <footer class="footer">
   <div class="footer-logo">● 販売店パートナーみっけ</div>
-  <p>運営：Smile Plus Consulting / 松本 芳也</p>
+  <p>運営：Smile Plus Consulting / 松本 由也</p>
   <p style="margin-top:10px">
     <a href="https://note.com/_yoshibon">note</a>
     <a href="mailto:info@spc-jp.com">お問い合わせ</a>
@@ -1282,27 +1469,31 @@ body{
 </footer>
 
 <script>
-// シミュレーター
 const custSlider = document.getElementById('customers');
 const rateSlider = document.getElementById('rate');
+const packSlider = document.getElementById('packs');
 const custVal = document.getElementById('cust-val');
 const rateVal = document.getElementById('rate-val');
+const packVal = document.getElementById('pack-val');
 const monthlyEl = document.getElementById('monthly');
 const yearlyEl = document.getElementById('yearly');
 
 function calc(){
   const cust = parseInt(custSlider.value);
   const rate = parseInt(rateSlider.value);
-  const monthly = Math.round(cust * (rate/100) * 5980 * 0.3);
+  const packs = parseInt(packSlider.value) / 10;
+  const monthly = Math.round(cust * (rate/100) * 5980 * 0.3 * packs);
   const yearly = monthly * 12;
   custVal.textContent = cust;
   rateVal.textContent = rate;
+  packVal.textContent = packs.toFixed(1);
   monthlyEl.textContent = monthly.toLocaleString();
   yearlyEl.textContent = yearly.toLocaleString();
 }
 
 custSlider.addEventListener('input', calc);
 rateSlider.addEventListener('input', calc);
+packSlider.addEventListener('input', calc);
 calc();
 </script>
 
