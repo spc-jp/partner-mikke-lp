@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>販売店パートナーみっけ｜中小企業を、もっと自慢できる会社に。</title>
+<title>共創パートナーみっけ｜中小企業を、もっと自慢できる会社に。</title>
 <meta name="description" content="お客様・取引先・求職者・金融機関が「この会社、進んでるな」と感じる成果物を、AIが毎月生み出すサブスクパッケージ。CASIO楽一販売店パートナー向け新提案。">
-<meta property="og:title" content="販売店パートナーみっけ｜中小企業を、もっと自慢できる会社に。">
+<meta property="og:title" content="共創パートナーみっけ｜中小企業を、もっと自慢できる会社に。">
 <meta property="og:description" content="便利なツールではなく、対外評価が上がる成果物を生むAIアプリ群。3パック9アプリ構成。">
 <meta property="og:image" content="https://partner-mikke.pages.dev/ogp.png">
 <meta property="og:url" content="https://partner-mikke.pages.dev/">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="https://partner-mikke.pages.dev/favicon.png">
+<link rel="icon" type="image/png" href="https://spc-jp.github.io/partner-mikke-lp/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ body{
   font-family:'Noto Serif JP',serif;
   font-size:20px;font-weight:700;
   color:var(--navy);
+  text-decoration:none;
 }
 .logo-mark{color:var(--gold)}
 .header-cta{
@@ -751,6 +752,27 @@ body{
   max-height:400px;
 }
 
+.partner-message {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-light);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 35px 40px;
+  text-align: left;
+}
+.partner-message h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 15px;
+}
+.partner-message p {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.9;
+}
+
 .final-cta{
   background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
   color:var(--white);
@@ -1058,6 +1080,10 @@ textarea.form-control{
   .modal-content{padding: 30px 20px;}
   .modal-btn{padding: 15px; gap: 15px;}
   .modal-btn-icon{width: 40px; height: 40px; font-size: 20px;}
+
+  .partner-message {padding: 25px 20px;}
+  .partner-message h3 {font-size: 16px;}
+  .partner-message p {font-size: 14px;}
 }
 </style>
 </head>
@@ -1065,7 +1091,7 @@ textarea.form-control{
 
 <header class="header">
   <div class="header-inner">
-    <div class="logo"><span class="logo-mark">●</span> 販売店パートナーみっけ</div>
+    <a href="#" class="logo"><span class="logo-mark">●</span> 共創パートナーみっけ</a>
     <a href="#cta" class="header-cta">説明会に申し込む</a>
   </div>
 </header>
@@ -1382,7 +1408,7 @@ textarea.form-control{
       <div class="compare-row head">
         <div class="compare-cell label">機能・価値領域</div>
         <div class="compare-cell">楽一・弥生など<br>既存ソフト</div>
-        <div class="compare-cell ours">販売店<br>パートナーみっけ</div>
+        <div class="compare-cell ours">共創<br>パートナーみっけ</div>
       </div>
       <div class="compare-row">
         <div class="compare-cell label">販売管理・受発注・在庫</div>
@@ -1650,6 +1676,20 @@ textarea.form-control{
   </div>
 </section>
 
+<section class="section" style="padding-top: 0; padding-bottom: 60px;">
+  <div class="section-inner">
+    <div class="partner-message">
+      <h3>追伸</h3>
+      <p>
+        <strong style="color:var(--navy);">専門家の方・業界に精通されている方へ。</strong><br><br>
+        経営者様のお悩み解決に、これらのアプリをお役立ていただける場面があるかもしれません。<br>
+        ご一緒に価値を届けていけるパートナー様との出会いを大切にしています。<br>
+        ご興味があれば、お気軽にご連絡ください。
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="final-cta" id="cta">
   <div class="section-inner">
     <h2 class="serif">
@@ -1738,7 +1778,7 @@ textarea.form-control{
 </div>
 
 <footer class="footer">
-  <div class="footer-logo">● 販売店パートナーみっけ</div>
+  <div class="footer-logo">● 共創パートナーみっけ</div>
   <p>運営：Smile Plus Consulting / 松本 由也</p>
   <p style="margin-top:10px">
     <a href="https://www.smileplusctg.com/contact">お問合せ</a>
@@ -1782,8 +1822,8 @@ function openModal(event) {
   const dates = document.getElementById('f-dates').value;
 
   // メールの件名と本文を組み立て
-  const subject = "販売店パートナーみっけ 説明会お申込み";
-  const body = `【販売店パートナーみっけ 説明会お申込み】
+  const subject = "共創パートナーみっけ 説明会お申込み";
+  const body = `【共創パートナーみっけ 説明会お申込み】
 
 会社名：${company}
 ご担当者名：${name}
