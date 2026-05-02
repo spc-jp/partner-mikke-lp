@@ -679,22 +679,9 @@ body{
   background:var(--bg-cream);
   border-radius:16px;
   padding:50px;
-  display:grid;
-  grid-template-columns:200px 1fr;
-  gap:40px;
-  align-items:center;
-  max-width:900px;
+  max-width:800px;
   margin:0 auto;
-}
-.creator-photo{
-  width:200px;height:200px;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--navy),var(--gold));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Noto Serif JP',serif;
-  font-size:60px;
-  color:var(--white);
-  font-weight:700;
+  text-align:center;
 }
 .creator-content h3{
   font-size:26px;
@@ -711,6 +698,8 @@ body{
   font-size:15px;
   line-height:1.9;
   color:var(--text);
+  text-align:left;
+  display:inline-block;
 }
 
 .faq{background:var(--bg-light)}
@@ -833,8 +822,7 @@ body{
   .merit-grid{grid-template-columns:1fr;gap:16px}
   .merit-card{padding:24px 20px}
   .support-grid{grid-template-columns:1fr;gap:18px}
-  .creator-card{grid-template-columns:1fr;padding:35px 25px;text-align:center}
-  .creator-photo{margin:0 auto;width:140px;height:140px;font-size:42px}
+  .creator-card{padding:35px 25px}
   .sim-result{grid-template-columns:1fr;gap:18px}
   .sim-result-value{font-size:28px}
   .final-cta h2{font-size:24px}
@@ -1382,7 +1370,6 @@ body{
     <div class="section-line"></div>
 
     <div class="creator-card">
-      <div class="creator-photo">松本</div>
       <div class="creator-content">
         <h3 class="serif">松本 由也</h3>
         <div class="creator-role">Smile Plus Consulting 代表 / みっけシリーズ開発者</div>
