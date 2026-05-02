@@ -782,6 +782,220 @@ body{
   color:rgba(255,255,255,0.7);
 }
 
+/* Contact Form */
+.contact-form{
+  background:var(--white);
+  border-radius:12px;
+  padding:40px 50px;
+  max-width:700px;
+  margin:40px auto 0;
+  text-align:left;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  color:var(--text);
+}
+.form-group{
+  margin-bottom:25px;
+}
+.form-label{
+  display:flex;
+  align-items:center;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:10px;
+  font-size:15px;
+}
+.form-label .required{
+  background:#e53e3e;
+  color:var(--white);
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  margin-left:10px;
+}
+.form-label .optional{
+  background:#a0aec0;
+  color:var(--white);
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:4px;
+  margin-left:10px;
+}
+.form-control{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:16px;
+  font-family:inherit;
+  transition:all 0.3s;
+  background:#f9fafb;
+}
+.form-control:focus{
+  outline:none;
+  border-color:var(--gold);
+  background:var(--white);
+  box-shadow:0 0 0 3px rgba(208,169,0,0.2);
+}
+textarea.form-control{
+  min-height:120px;
+  resize:vertical;
+}
+.form-submit-wrapper{
+  text-align:center;
+  margin-top:40px;
+}
+.form-submit-btn{
+  background:var(--gold);
+  color:var(--white);
+  border:none;
+  padding:18px 60px;
+  border-radius:50px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  transition:all 0.3s;
+  box-shadow:0 8px 24px rgba(208,169,0,0.4);
+  font-family:inherit;
+  width:100%;
+  max-width:300px;
+}
+.form-submit-btn:hover{
+  background:var(--gold-light);
+  transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(208,169,0,0.5);
+}
+.form-success-msg {
+  display: none;
+  background: var(--color-pack1-pale);
+  color: var(--color-pack1);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-content {
+  background: var(--white);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-close {
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--navy);
+}
+.modal-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  margin-bottom: 15px;
+  transition: all 0.3s;
+}
+.modal-btn:hover {
+  border-color: var(--gold);
+  background: var(--bg-cream);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.modal-btn-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.modal-btn-icon.mail { background: #eaf0f9; color: #1e4d8b; }
+.modal-btn-icon.gmail { background: #fbeef0; color: #d93025; }
+.modal-btn-text h4 { font-size: 16px; margin-bottom: 4px; color: var(--navy); font-weight: 700; }
+.modal-btn-text p { font-size: 13px; color: var(--text-light); }
+
+.modal-fallback {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+.modal-fallback h4 {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.modal-fallback-note {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+.modal-textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 15px;
+  resize: vertical;
+  background: #f9fafb;
+  font-family: inherit;
+  line-height: 1.5;
+}
+.modal-copy-btn {
+  width: 100%;
+  padding: 14px;
+  background: #e5e7eb;
+  color: var(--navy);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+.modal-copy-btn:hover {
+  background: #d1d5db;
+}
+
 .footer{
   background:var(--navy-dark);
   color:rgba(255,255,255,0.6);
@@ -837,6 +1051,13 @@ body{
   .compare-row.head{font-size:12px}
   .compare-cell{font-size:12px}
   .position-note{padding:20px 22px;font-size:13px;margin:20px auto 0}
+  
+  .contact-form{padding:30px 20px;margin-top:30px}
+  .form-submit-btn{max-width:100%}
+  
+  .modal-content{padding: 30px 20px;}
+  .modal-btn{padding: 15px; gap: 15px;}
+  .modal-btn-icon{width: 40px; height: 40px; font-size: 20px;}
 }
 </style>
 </head>
@@ -1430,27 +1651,97 @@ body{
 </section>
 
 <section class="final-cta" id="cta">
-  <h2 class="serif">
-    お客様を、<br>
-    自慢できる会社に変えませんか。
-  </h2>
-  <p>
-    まずは販売店説明会(オンライン60分・無料)で、<br>
-    実際のアプリの動きと、貴社にとっての収益試算をご覧ください。
-  </p>
-  <a href="mailto:info@spc-jp.com?subject=販売店パートナーみっけ説明会希望&body=会社名：%0D%0Aご担当者名：%0D%0Aお電話番号：%0D%0A保有楽一ユーザー数(目安)：%0D%0Aご希望日時候補：" class="btn-primary">販売店説明会に申し込む</a>
-  <p class="final-cta-note">
-    ※ オンライン60分・無料・初期費用不要<br>
-    ※ お申込みフォーム準備中のため、メールでのご連絡をお願いいたします
-  </p>
+  <div class="section-inner">
+    <h2 class="serif">
+      お客様を、<br>
+      自慢できる会社に変えませんか。
+    </h2>
+    <p>
+      まずは販売店説明会(オンライン60分・無料)で、<br>
+      実際のアプリの動きと、貴社にとっての収益試算をご覧ください。
+    </p>
+    <p class="final-cta-note" style="margin-top:0;">
+      ※ オンライン60分・無料・初期費用不要
+    </p>
+
+    <div class="contact-form">
+      <form onsubmit="openModal(event)">
+        <div class="form-group">
+          <label class="form-label">会社名 <span class="required">必須</span></label>
+          <input type="text" id="f-company" class="form-control" placeholder="例：株式会社〇〇販売" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご担当者名 <span class="required">必須</span></label>
+          <input type="text" id="f-name" class="form-control" placeholder="例：山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">メールアドレス <span class="required">必須</span></label>
+          <input type="email" id="f-email" class="form-control" placeholder="例：info@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">お電話番号 <span class="optional">任意</span></label>
+          <input type="tel" id="f-tel" class="form-control" placeholder="例：03-1234-5678">
+        </div>
+        <div class="form-group">
+          <label class="form-label">保有楽一ユーザー数(目安) <span class="required">必須</span></label>
+          <select id="f-users" class="form-control" required>
+            <option value="" hidden>選択してください</option>
+            <option value="50社未満">50社未満</option>
+            <option value="50〜100社">50〜100社</option>
+            <option value="100〜300社">100〜300社</option>
+            <option value="300〜500社">300〜500社</option>
+            <option value="500社以上">500社以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご希望日時候補 <span class="required">必須</span></label>
+          <textarea id="f-dates" class="form-control" placeholder="例：&#10;第一希望：〇月〇日 午後&#10;第二希望：〇月〇日 終日&#10;第三希望：〇月〇日 午前" required></textarea>
+        </div>
+        
+        <div class="form-submit-wrapper">
+          <button type="submit" class="form-submit-btn">説明会に申し込む</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
+
+<!-- モーダルウィンドウ -->
+<div class="modal-overlay" id="sendModal" onclick="closeModalOnBg(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title">送信方法を選択してください</div>
+
+    <a href="#" class="modal-btn" id="mail-app-link">
+      <div class="modal-btn-icon mail">✉️</div>
+      <div class="modal-btn-text">
+        <h4>メールソフトで送る</h4>
+        <p>Outlook、Macメールなど設定済みの方</p>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" rel="noopener noreferrer" class="modal-btn" id="gmail-link">
+      <div class="modal-btn-icon gmail">📧</div>
+      <div class="modal-btn-text">
+        <h4>Gmailで送る</h4>
+        <p>ブラウザでGmailをお使いの方</p>
+      </div>
+    </a>
+
+    <div class="modal-fallback">
+      <h4>うまくいかない場合は...</h4>
+      <p class="modal-fallback-note">以下の本文をコピーして、使い慣れたメール等の本文に貼り付けて <strong style="color:var(--navy);">spc@smileplusctg.com</strong> までお送りください。</p>
+      <textarea class="modal-textarea" id="fallback-textarea" readonly></textarea>
+      <button type="button" class="modal-copy-btn" id="copy-btn" onclick="copyText()">本文をコピーする</button>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="footer-logo">● 販売店パートナーみっけ</div>
   <p>運営：Smile Plus Consulting / 松本 由也</p>
   <p style="margin-top:10px">
-    <a href="https://note.com/_yoshibon">note</a>
-    <a href="mailto:info@spc-jp.com">お問い合わせ</a>
+    <a href="https://www.smileplusctg.com/contact">お問合せ</a>
   </p>
   <p style="margin-top:20px;font-size:11px;opacity:0.6">© 2026 Smile Plus Consulting. All Rights Reserved.</p>
 </footer>
@@ -1476,6 +1767,86 @@ function calc(){
   packVal.textContent = packs.toFixed(1);
   monthlyEl.textContent = monthly.toLocaleString();
   yearlyEl.textContent = yearly.toLocaleString();
+}
+
+// フォーム送信時のモーダル表示処理
+function openModal(event) {
+  event.preventDefault(); // 通常のフォーム送信をストップ
+  
+  // フォームの値を取得
+  const company = document.getElementById('f-company').value;
+  const name = document.getElementById('f-name').value;
+  const email = document.getElementById('f-email').value;
+  const tel = document.getElementById('f-tel').value || '未入力';
+  const users = document.getElementById('f-users').value;
+  const dates = document.getElementById('f-dates').value;
+
+  // メールの件名と本文を組み立て
+  const subject = "販売店パートナーみっけ 説明会お申込み";
+  const body = `【販売店パートナーみっけ 説明会お申込み】
+
+会社名：${company}
+ご担当者名：${name}
+メールアドレス：${email}
+お電話番号：${tel}
+保有楽一ユーザー数：${users}
+
+■ご希望日時候補：
+${dates}`;
+
+  const targetEmail = "spc@smileplusctg.com";
+
+  // URLエンコード処理（改行や特殊文字をURLで使える形式に変換）
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(body);
+
+  // ① メールソフト用リンクにセット
+  document.getElementById('mail-app-link').href = `mailto:${targetEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+  
+  // ② Gmail（ブラウザ）用リンクにセット
+  document.getElementById('gmail-link').href = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${encodedSubject}&body=${encodedBody}`;
+
+  // ③ コピー用テキストエリアにセット
+  document.getElementById('fallback-textarea').value = body;
+
+  // モーダルを表示
+  document.getElementById('sendModal').classList.add('active');
+}
+
+// モーダルを閉じる処理
+function closeModal() {
+  document.getElementById('sendModal').classList.remove('active');
+  const btn = document.getElementById('copy-btn');
+  btn.textContent = '本文をコピーする';
+  btn.style.background = '#e5e7eb';
+  btn.style.color = 'var(--navy)';
+}
+
+// 背景クリックでモーダルを閉じる
+function closeModalOnBg(event) {
+  if (event.target.id === 'sendModal') {
+    closeModal();
+  }
+}
+
+// 本文をクリップボードにコピーする処理
+function copyText() {
+  const textarea = document.getElementById('fallback-textarea');
+  textarea.select();
+  document.execCommand('copy');
+  
+  // ボタンの見た目を変更してフィードバック
+  const btn = document.getElementById('copy-btn');
+  btn.textContent = 'コピーしました！';
+  btn.style.background = 'var(--color-pack1)';
+  btn.style.color = '#fff';
+  
+  // 3秒後に元のデザインに戻す
+  setTimeout(() => {
+    btn.textContent = '本文をコピーする';
+    btn.style.background = '#e5e7eb';
+    btn.style.color = 'var(--navy)';
+  }, 3000);
 }
 
 custSlider.addEventListener('input', calc);
