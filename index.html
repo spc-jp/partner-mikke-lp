@@ -209,16 +209,6 @@ body{
   font-size:15px;
   line-height:2;
   color:var(--text);
-  margin-bottom:20px;
-}
-.concept-dx-box {
-  background: var(--gold-pale);
-  padding: 20px 25px;
-  border-radius: 8px;
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--navy);
-  border: 1px solid rgba(208,169,0,0.3);
 }
 
 .problem{background:var(--bg-light)}
@@ -460,88 +450,6 @@ body{
   font-style:italic;
   font-weight:500;
 }
-
-/* ドアノックバッジ */
-.door-knock-badge {
-  display: inline-block;
-  background: #e63946;
-  color: white;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  animation: pulse 2s infinite;
-  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-/* Before/After Section */
-.ba-section { background: var(--white); padding-bottom: 0; }
-.ba-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.ba-card {
-  background: var(--bg-cream);
-  border-radius: 12px;
-  padding: 35px 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  position: relative;
-}
-.ba-card.before { border-top: 5px solid #94a3b8; }
-.ba-card.after { border-top: 5px solid var(--gold); }
-.ba-label {
-  font-weight: 700;
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 6px;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-.ba-card.before .ba-label { background: #e2e8f0; color: #475569; }
-.ba-card.after .ba-label { background: var(--gold); color: var(--white); }
-.ba-text { font-size: 15px; line-height: 1.8; color: var(--text); font-weight: 500;}
-.ba-speech {
-  background: var(--white);
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text-light);
-  border-left: 4px solid #cbd5e1;
-  position: relative;
-}
-.ba-speech::before {
-  content: '営業マン';
-  position: absolute;
-  top: -12px;
-  left: 10px;
-  background: #cbd5e1;
-  color: #fff;
-  font-size: 10px;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-weight: bold;
-}
-.ba-card.after .ba-speech {
-  border-left-color: var(--gold);
-  color: var(--navy);
-  font-weight: 700;
-  background: var(--gold-pale);
-}
-.ba-card.after .ba-speech::before {
-  background: var(--gold);
-}
-
 
 .compare{background:var(--white)}
 .compare-table{
@@ -886,17 +794,12 @@ body{
   margin-left:auto;margin-right:auto;
   line-height:1.9;
 }
-.final-cta .btn-primary{
-  font-size:19px;
-  padding:22px 50px;
-}
 .final-cta-note{
   margin-top:25px;
   font-size:13px;
   color:rgba(255,255,255,0.7);
 }
 
-/* Contact Form */
 .contact-form{
   background:var(--white);
   border-radius:12px;
@@ -979,7 +882,40 @@ textarea.form-control{
   box-shadow:0 12px 32px rgba(208,169,0,0.5);
 }
 
-/* Modal */
+/* トップへ戻るボタン */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  background: #00BFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,191,255,0.3);
+}
+
 .modal-overlay {
   display: none;
   position: fixed;
@@ -1137,7 +1073,6 @@ textarea.form-control{
   .axes-grid{grid-template-columns:1fr;gap:18px}
   .mechanism-row{grid-template-columns:1fr;gap:14px}
   .mechanism-arrow{transform:rotate(90deg)}
-  .ba-grid { grid-template-columns: 1fr; gap: 20px; }
   .merit-grid{grid-template-columns:1fr;gap:16px}
   .merit-card{padding:24px 20px}
   .support-grid{grid-template-columns:1fr;gap:18px}
@@ -1194,7 +1129,7 @@ textarea.form-control{
     <div class="hero-trust">
       <div class="hero-trust-item">対外評価が上がる3パッケージ</div>
       <div class="hero-trust-item">9アプリすべて成果物アプリ</div>
-      <div class="hero-trust-item">サポートはすべて開発元に丸投げ</div>
+      <div class="hero-trust-item">サポートは開発元が一次対応</div>
     </div>
     <div class="hero-cta-group">
       <a href="#cta" class="btn-primary">販売店説明会に申し込む</a>
@@ -1221,12 +1156,6 @@ textarea.form-control{
       <p class="concept-text">
         取引先に毎月届く立派なレポート。求職者の心を動かす採用ストーリー。金融機関を唸らせる事業計画書。これらはすべて「対外的に評価が上がる成果物」です。私たちは便利グッズではなく、中小企業の<strong style="color:var(--navy)">「会社の見え方」</strong>そのものを変えるアプリ群を提供します。
       </p>
-      
-      <!-- 追記：温かいDXの定義 -->
-      <div class="concept-dx-box">
-        <strong>【社長に刺さる、本当のDX体験】</strong><br>
-        中小企業にとっての本当のDXとは、難しいシステムを入れることではありません。現場の「考える負担」や「めんどうな作業」を減らし、取引先や求職者に『この会社、進んでるな』と評価される形を作ることです。本パッケージは、まさにその「一番おいしいDX体験」を社長にお届けするツールです。
-      </div>
     </div>
   </div>
 </section>
@@ -1305,16 +1234,15 @@ textarea.form-control{
         <div class="mechanism-arrow">→</div>
         <div class="mechanism-box">
           <span class="label">開発元</span>
-          <h4>サポート丸投げOK</h4>
+          <h4>サポート＆機能改善</h4>
           <p>お客様問い合わせ・新機能リリースは松本が直接対応。</p>
         </div>
       </div>
     </div>
 
-    <!-- 追記：サポート丸投げの強調 -->
-    <p style="text-align:center;font-size:16px;color:var(--text);margin-top:30px;line-height:1.9">
-      販売店様は<strong style="color:var(--navy);font-size:18px;">「売って、お客様と一緒に成果物を喜ぶ」</strong>だけ。<br>
-      <span style="color:var(--text-light);font-size:14px;">販売店様に『考える負担』も『サポートする負担』もありません。面倒な技術サポートはすべて開発元にお任せください。</span>
+    <p style="text-align:center;font-size:15px;color:var(--text-light);margin-top:30px;line-height:1.9">
+      販売店は<strong style="color:var(--navy)">「売る・契約する・点検訪問する」</strong>だけ。<br>
+      お客様サポートと機能開発は、すべて開発元が担当します。
     </p>
   </div>
 </section>
@@ -1325,61 +1253,6 @@ textarea.form-control{
     <div class="section-line"></div>
     <p class="section-sub">中小企業が本当に評価されたい3つの相手に、<br>それぞれ最適化した成果物アプリ群</p>
 
-    <!-- 変更：採用力UPパックを最初に配置し、バッジを追加 -->
-    <div class="pack-card pack2">
-      <div class="pack-left">
-        <div class="door-knock-badge">最初の提案（ドアノック）に最適！</div>
-        <div class="pack-icon-large">👥</div>
-        <div class="pack-title serif">採用力<br>UPパック</div>
-        <p class="pack-tagline">求職者・社員からの<br>「ここで働きたい」を引き出す</p>
-
-        <div class="pack-target-box">
-          <strong>こんな会社におすすめ</strong>
-          人手不足・採用難に悩む中小企業。求人広告を出しても応募が来ない、若手が定着しない、会社の魅力をうまく伝えられないとお悩みの会社。
-        </div>
-
-        <div class="pack-price-box">
-          <div class="pack-price-label">お客様向け月額</div>
-          <div class="pack-price-value"><span class="yen">¥</span>5,980<span class="month">/月</span></div>
-          <div class="pack-margin-tag">販売店マージン 30%</div>
-        </div>
-      </div>
-
-      <div class="pack-right">
-        <h4>収録アプリ 3本</h4>
-        <div class="app-list">
-          <div class="app-card">
-            <div class="app-emoji">🎤</div>
-            <div>
-              <div class="app-name">採用ストーリーみっけ</div>
-              <div class="app-desc">社員インタビュー音声から、採用ページ用の社員紹介記事を生成。</div>
-              <div class="app-output"><strong>成果物</strong>Wantedly・採用ページに載せる、本物の社員ストーリー</div>
-              <div class="app-quote">"うちの社員紹介、AIで作ってます" と言える</div>
-            </div>
-          </div>
-          <div class="app-card">
-            <div class="app-emoji">🏢</div>
-            <div>
-              <div class="app-name">会社案内みっけ</div>
-              <div class="app-desc">会社の特徴と歴史から、ホームページ用の会社案内コンテンツを生成。</div>
-              <div class="app-output"><strong>成果物</strong>訪問者が「いい会社だな」と感じる会社案内ページ</div>
-              <div class="app-quote">"会社案内、AIでリニューアルしました" と言える</div>
-            </div>
-          </div>
-          <div class="app-card">
-            <div class="app-emoji">📢</div>
-            <div>
-              <div class="app-name">求人みっけ</div>
-              <div class="app-desc">会社の強み5項目から、Indeed・ハローワーク・SNS用の求人広告を生成。</div>
-              <div class="app-output"><strong>成果物</strong>応募が来る、媒体別の求人広告</div>
-              <div class="app-quote">"求人もAIで作ってます" と言える</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 元々のpack1 (取引先UPパック) -->
     <div class="pack-card pack1">
       <div class="pack-left">
         <div class="pack-icon-large">💼</div>
@@ -1432,7 +1305,58 @@ textarea.form-control{
       </div>
     </div>
 
-    <!-- 元々のpack3 (地域・金融UPパック) -->
+    <div class="pack-card pack2">
+      <div class="pack-left">
+        <div class="pack-icon-large">👥</div>
+        <div class="pack-title serif">採用力<br>UPパック</div>
+        <p class="pack-tagline">求職者・社員からの<br>「ここで働きたい」を引き出す</p>
+
+        <div class="pack-target-box">
+          <strong>こんな会社におすすめ</strong>
+          人手不足・採用難に悩む中小企業。求人広告を出しても応募が来ない、若手が定着しない、会社の魅力をうまく伝えられないとお悩みの会社。
+        </div>
+
+        <div class="pack-price-box">
+          <div class="pack-price-label">お客様向け月額</div>
+          <div class="pack-price-value"><span class="yen">¥</span>5,980<span class="month">/月</span></div>
+          <div class="pack-margin-tag">販売店マージン 30%</div>
+        </div>
+      </div>
+
+      <div class="pack-right">
+        <h4>収録アプリ 3本</h4>
+        <div class="app-list">
+          <div class="app-card">
+            <div class="app-emoji">🎤</div>
+            <div>
+              <div class="app-name">採用ストーリーみっけ</div>
+              <div class="app-desc">社員インタビュー音声から、採用ページ用の社員紹介記事を生成。</div>
+              <div class="app-output"><strong>成果物</strong>Wantedly・採用ページに載せる、本物の社員ストーリー</div>
+              <div class="app-quote">"うちの社員紹介、AIで作ってます" と言える</div>
+            </div>
+          </div>
+          <div class="app-card">
+            <div class="app-emoji">🏢</div>
+            <div>
+              <div class="app-name">会社案内みっけ</div>
+              <div class="app-desc">会社の特徴と歴史から、ホームページ用の会社案内コンテンツを生成。</div>
+              <div class="app-output"><strong>成果物</strong>訪問者が「いい会社だな」と感じる会社案内ページ</div>
+              <div class="app-quote">"会社案内、AIでリニューアルしました" と言える</div>
+            </div>
+          </div>
+          <div class="app-card">
+            <div class="app-emoji">📢</div>
+            <div>
+              <div class="app-name">求みっけ</div>
+              <div class="app-desc">会社の強み5項目から、Indeed・ハローワーク・SNS用の求人広告を生成。</div>
+              <div class="app-output"><strong>成果物</strong>応募が来る、媒体別の求人広告</div>
+              <div class="app-quote">"求人もAIで作ってます" と言える</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="pack-card pack3">
       <div class="pack-left">
         <div class="pack-icon-large">🏦</div>
@@ -1489,86 +1413,6 @@ textarea.form-control{
       <strong style="color:var(--navy);font-size:18px">3パック全部入りバンドル割：月額 ¥12,800</strong><br>
       <span style="color:var(--text-light);font-size:13px">(通常 ¥17,940 → 28%OFF・販売店マージン30%)</span>
     </p>
-  </div>
-</section>
-
-<!-- 新設：営業マンのビフォーアフター -->
-<section class="section ba-section">
-  <div class="section-inner">
-    <h2 class="section-title">営業マンの「訪問の質」が劇的に変わります</h2>
-    <div class="section-line"></div>
-    
-    <div class="ba-grid">
-      <div class="ba-card before">
-        <div class="ba-label">今まで（商材がない時）</div>
-        <p class="ba-text">システムの調子伺いしか話すことがなく、新しい提案に繋がらない。社長も忙しそうで長居できない。</p>
-        <div class="ba-speech">
-          「社長、最近システムの調子は…あ、問題ないですか。はい、ではまた来月伺います…」<br>
-          <span style="font-size:12px;color:#94a3b8;">（5分の雑談で終了）</span>
-        </div>
-      </div>
-      <div class="ba-card after">
-        <div class="ba-label">みっけシリーズを持参した時</div>
-        <p class="ba-text">社長の一番痛い課題（採用など）に直接アプローチできるため、社長が身を乗り出して話を聞いてくれる。</p>
-        <div class="ba-speech">
-          「社長、最近ハローワークからいい人の応募来ます？ 今月『AIで作る採用ストーリー』のデモをお持ちしたんですよ！」<br>
-          <span style="font-size:12px;color:var(--gold);">（社長が興味を持ち、次の提案に繋がる！）</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section merit">
-  <div class="section-inner">
-    <h2 class="section-title">販売店オーナーの<br>6つのメリット</h2>
-    <div class="section-line"></div>
-    <p class="section-sub">「儲かる×売れる×解約されない」サブスクの仕組みです</p>
-
-    <div class="merit-grid">
-      <div class="merit-card">
-        <div class="merit-num">1</div>
-        <div class="merit-content">
-          <h3>既存商材と競合しない新領域</h3>
-          <p>楽一・弥生など既存の販売管理／会計商材とは別軸の「対外評価」領域。お客様への提案がバッティングせず、純粋な追加売上になります。</p>
-        </div>
-      </div>
-      <div class="merit-card">
-        <div class="merit-num">2</div>
-        <div class="merit-content">
-          <h3>解約されにくい「成果物アプリ」</h3>
-          <p>毎月成果物が世に出るため、社長が「使い続ける理由」を体感できる。便利グッズと違い継続率が圧倒的。</p>
-        </div>
-      </div>
-      <div class="merit-card">
-        <div class="merit-num">3</div>
-        <div class="merit-content">
-          <h3>1社あたり最大3パック契約も可能</h3>
-          <p>取引先評価・採用力・地域評価。3軸で価値が異なるため、1社で複数パック契約が自然に発生します。</p>
-        </div>
-      </div>
-      <div class="merit-card">
-        <div class="merit-num">4</div>
-        <div class="merit-content">
-          <h3>新人営業マンが戦力になる</h3>
-          <p>機能説明トーク不要。「社長、最近いい人の応募来ます？」から始まるため、新人でも初訪問から提案できます。</p>
-        </div>
-      </div>
-      <div class="merit-card">
-        <div class="merit-num">5</div>
-        <div class="merit-content">
-          <h3>毎月の訪問理由が自動で生まれる</h3>
-          <p>新機能リリースやテンプレ追加で、定期訪問の口実が常に補充される。営業マンが動きやすくなります。</p>
-        </div>
-      </div>
-      <div class="merit-card">
-        <div class="merit-num">6</div>
-        <div class="merit-content">
-          <h3>非楽一ユーザーへの新規開拓商材に</h3>
-          <p>「アプリだけ試したい」という他社ソフトユーザーにも提案可能。半年後に楽一へ繋ぐ動線が作れます。</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1686,6 +1530,59 @@ textarea.form-control{
   </div>
 </section>
 
+<section class="section merit">
+  <div class="section-inner">
+    <h2 class="section-title">販売店オーナーの<br>6つのメリット</h2>
+    <div class="section-line"></div>
+    <p class="section-sub">「儲かる×売れる×解約されない」サブスクの仕組みです</p>
+
+    <div class="merit-grid">
+      <div class="merit-card">
+        <div class="merit-num">1</div>
+        <div class="merit-content">
+          <h3>既存商材と競合しない新領域</h3>
+          <p>楽一・弥生など既存の販売管理／会計商材とは別軸の「対外評価」領域。お客様への提案がバッティングせず、純粋な追加売上になります。</p>
+        </div>
+      </div>
+      <div class="merit-card">
+        <div class="merit-num">2</div>
+        <div class="merit-content">
+          <h3>解約されにくい「成果物アプリ」</h3>
+          <p>毎月成果物が世に出るため、社長が「使い続ける理由」を体感できる。便利グッズと違い継続率が圧倒的。</p>
+        </div>
+      </div>
+      <div class="merit-card">
+        <div class="merit-num">3</div>
+        <div class="merit-content">
+          <h3>1社あたり最大3パック契約も可能</h3>
+          <p>取引先評価・採用力・地域評価。3軸で価値が異なるため、1社で複数パック契約が自然に発生します。</p>
+        </div>
+      </div>
+      <div class="merit-card">
+        <div class="merit-num">4</div>
+        <div class="merit-content">
+          <h3>新人営業マンが戦力になる</h3>
+          <p>機能説明トーク不要。「社長、毎月取引先にレポート出せたら、どうですか?」だけで話が始まります。</p>
+        </div>
+      </div>
+      <div class="merit-card">
+        <div class="merit-num">5</div>
+        <div class="merit-content">
+          <h3>毎月の訪問理由が自動で生まれる</h3>
+          <p>新機能リリースやテンプレ追加で、定期訪問の口実が常に補充される。営業マンが動きやすくなります。</p>
+        </div>
+      </div>
+      <div class="merit-card">
+        <div class="merit-num">6</div>
+        <div class="merit-content">
+          <h3>非楽一ユーザーへの新規開拓商材に</h3>
+          <p>「アプリだけ試したい」という他社ソフトユーザーにも提案可能。半年後に楽一へ繋ぐ動線が作れます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section testimonial">
   <div class="section-inner">
     <h2 class="section-title">先行ご紹介した<br>販売店オーナーの反応</h2>
@@ -1767,7 +1664,7 @@ textarea.form-control{
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">ITに弱い営業マンでも売れますか？</div>
-        <div class="faq-a">機能説明は不要です。「社長、最近ハローワークから応募来ますか？」この一言で会話は始まります。採用力UPパックをフック（ドアノック）にすることで、新人営業マンでも初訪問から提案できる設計です。</div>
+        <div class="faq-a">機能説明は不要です。「社長、毎月取引先にレポート出せたら、どうですか?」「採用、応募来ますか?」「補助金、取れてますか?」この3つのどれかで会話は始まります。新人営業マンでも初訪問から提案できる設計です。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">お客様サポートは誰がやりますか？</div>
@@ -1783,7 +1680,7 @@ textarea.form-control{
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">3パックすべて取り扱う必要がありますか？</div>
-        <div class="faq-a">いいえ、保有顧客の特性に合わせて、1パックから取扱可能です。まずは「採用力UPパック」をドアノック商材として持ち込み、関係性が深まった後に他のパックを追加提案する流れがおすすめです。</div>
+        <div class="faq-a">いいえ、保有顧客の特性に合わせて、1パックから取扱可能です。「まずは取引先評価UPパックだけ」「採用に困るお客様が多いので採用力UPパックから」といった部分導入もご相談に応じます。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">いつから取り扱えますか？</div>
@@ -1907,6 +1804,9 @@ textarea.form-control{
   <p style="margin-top:20px;font-size:11px;opacity:0.6">© 2026 Smile Plus Consulting. All Rights Reserved.</p>
 </footer>
 
+<!-- トップへ戻るボタン -->
+<button class="back-to-top" id="backToTop" aria-label="トップへ戻る">↑</button>
+
 <script>
 const custSlider = document.getElementById('customers');
 const rateSlider = document.getElementById('rate');
@@ -1929,6 +1829,11 @@ function calc(){
   monthlyEl.textContent = monthly.toLocaleString();
   yearlyEl.textContent = yearly.toLocaleString();
 }
+
+custSlider.addEventListener('input', calc);
+rateSlider.addEventListener('input', calc);
+packSlider.addEventListener('input', calc);
+calc();
 
 // フォーム送信時のモーダル表示処理
 function openModal(event) {
@@ -2010,10 +1915,21 @@ function copyText() {
   }, 3000);
 }
 
-custSlider.addEventListener('input', calc);
-rateSlider.addEventListener('input', calc);
-packSlider.addEventListener('input', calc);
-calc();
+// トップへ戻るボタンの制御
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
+});
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 </script>
 
 </body>
