@@ -682,6 +682,46 @@
   }
   footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
 
+
+  /* トップへ戻るボタン */
+  .back-to-top {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #FFE066;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, background 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .back-to-top:hover {
+    background: #0D3D52;
+  }
+  .back-to-top:hover svg path {
+    stroke: #FFE066;
+  }
+  .back-to-top svg {
+    animation: bounce-up 1.4s ease-in-out infinite;
+  }
+  @keyframes bounce-up {
+    0%, 100% { transform: translateY(0); }
+    40%       { transform: translateY(-6px); }
+    60%       { transform: translateY(-3px); }
+  }
+
   /* モーダル */
   .modal-overlay {
     display: none;
@@ -1116,6 +1156,17 @@
 </div>
 
 <script>
+
+  // トップへ戻るボタン表示制御
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= 400) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+
   // シミュレーター
   function calcSim() {
     const users = parseFloat(document.getElementById('sl-users').value);
@@ -1169,5 +1220,13 @@
     if (e.target === this) closeModal();
   });
 </script>
+
+<!-- トップへ戻るボタン -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ページトップへ戻る">
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11 18V4M4 11l7-7 7 7" stroke="#0D3D52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
 </body>
 </html>
