@@ -850,9 +850,9 @@
     </div>
 
     <div class="sim-result-box">
-      <div class="sim-result-box-label">毎月のストック収益（販売店マージン30%）</div>
-      <div class="sim-monthly" id="sim-monthly">¥242,190</div>
-      <div class="sim-yearly" id="sim-yearly">年間換算 約 ¥2,906,280</div>
+      <div class="sim-result-box-label">年間ストック収益（販売店マージン30%）</div>
+      <div class="sim-monthly" id="sim-yearly">¥2,906,280</div>
+      <div class="sim-yearly" id="sim-monthly">毎月 約 ¥242,190</div>
     </div>
     <p class="sim-note">
       ※ 月額¥5,980/パック × 販売店マージン30% × 平均契約パック数 で計算<br>
@@ -1126,8 +1126,8 @@
     document.getElementById('val-users').textContent  = users + '社';
     document.getElementById('val-rate').textContent   = (rate * 100) + '%';
     document.getElementById('val-packs').textContent  = packs + 'パック';
-    document.getElementById('sim-monthly').textContent = '¥' + monthly.toLocaleString();
-    document.getElementById('sim-yearly').textContent  = '年間換算 約 ¥' + yearly.toLocaleString();
+    document.getElementById('sim-yearly').textContent  = '¥' + yearly.toLocaleString();
+    document.getElementById('sim-monthly').textContent = '毎月 約 ¥' + monthly.toLocaleString();
   }
   ['sl-users','sl-rate','sl-packs'].forEach(id => {
     document.getElementById(id).addEventListener('input', calcSim);
