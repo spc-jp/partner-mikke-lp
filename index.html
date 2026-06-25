@@ -284,6 +284,91 @@
   .sim-result-num { font-size: clamp(28px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; letter-spacing: 0.02em; }
   .sim-result-sub { font-size: 13px; margin-top: 8px; opacity: 0.75; }
 
+  /* スライダーシミュレーター */
+  .slider-block { margin-bottom: 28px; }
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .slider-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+  }
+  .slider-val {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--gold-light);
+    min-width: 80px;
+    text-align: right;
+  }
+  .slider-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.15);
+    outline: none;
+    cursor: pointer;
+  }
+  .slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.15s;
+  }
+  .slider-input::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  .slider-input::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .sim-result-box {
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .sim-result-box-label {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    opacity: 0.75;
+  }
+  .sim-monthly {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+  .sim-yearly {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 10px;
+    opacity: 0.8;
+  }
+  .sim-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 20px;
+    line-height: 1.8;
+    text-align: center;
+  }
+
   /* パッケージ */
   .pkg-section { background: var(--gray-bg); }
   .pkg-grid {
@@ -737,32 +822,41 @@
 <section class="sim-section">
   <div class="inner">
     <p class="section-eyebrow">収益シミュレーション</p>
-    <h2 class="section-title" style="color:white;">保有ユーザー数別<br>ストック収益の目安</h2>
-    <div class="sim-layout">
-      <div class="sim-box">
-        <div class="sim-row">
-          <span class="sim-row-label">楽一ユーザー 50社</span>
-          <span class="sim-row-val">月 約 40,000円</span>
-        </div>
-        <div class="sim-row">
-          <span class="sim-row-label">楽一ユーザー 100社</span>
-          <span class="sim-row-val">月 約 80,000円</span>
-        </div>
-        <div class="sim-row">
-          <span class="sim-row-label">楽一ユーザー 200社</span>
-          <span class="sim-row-val">月 約 161,000円</span>
-        </div>
-        <div class="sim-row">
-          <span class="sim-row-label">楽一ユーザー 300社</span>
-          <span class="sim-row-val">月 約 242,000円</span>
-        </div>
+    <h2 class="section-title" style="color:white;">あなたの収益を<br>シミュレーションしてみてください</h2>
+
+    <div class="slider-block">
+      <div class="slider-header">
+        <span class="slider-label">📊 保有する楽一ユーザー数</span>
+        <span class="slider-val" id="val-users">300社</span>
       </div>
-      <div class="sim-result">
-        <div class="sim-result-label">300社保有の場合、年間換算</div>
-        <div class="sim-result-num">約290万円</div>
-        <div class="sim-result-sub">※導入率30%・1.5パック平均<br>販売店マージン30%での試算</div>
-      </div>
+      <input type="range" class="slider-input" id="sl-users" min="10" max="500" step="10" value="300">
     </div>
+
+    <div class="slider-block">
+      <div class="slider-header">
+        <span class="slider-label">📈 パッケージ導入率</span>
+        <span class="slider-val" id="val-rate">30%</span>
+      </div>
+      <input type="range" class="slider-input" id="sl-rate" min="5" max="80" step="5" value="30">
+    </div>
+
+    <div class="slider-block">
+      <div class="slider-header">
+        <span class="slider-label">📦 1社あたり平均契約パック数</span>
+        <span class="slider-val" id="val-packs">1.5パック</span>
+      </div>
+      <input type="range" class="slider-input" id="sl-packs" min="1" max="3" step="0.5" value="1.5">
+    </div>
+
+    <div class="sim-result-box">
+      <div class="sim-result-box-label">毎月のストック収益（販売店マージン30%）</div>
+      <div class="sim-monthly" id="sim-monthly">¥242,190</div>
+      <div class="sim-yearly" id="sim-yearly">年間換算 約 ¥2,906,280</div>
+    </div>
+    <p class="sim-note">
+      ※ 月額¥5,980/パック × 販売店マージン30% × 平均契約パック数 で計算<br>
+      ※ 楽一の販売収益とは別軸の新しいストック収益柱として積み上がります
+    </p>
   </div>
 </section>
 
@@ -1021,6 +1115,25 @@
 </div>
 
 <script>
+  // シミュレーター
+  function calcSim() {
+    const users = parseFloat(document.getElementById('sl-users').value);
+    const rate  = parseFloat(document.getElementById('sl-rate').value) / 100;
+    const packs = parseFloat(document.getElementById('sl-packs').value);
+    const monthly = Math.round(users * rate * packs * 5980 * 0.3);
+    const yearly  = monthly * 12;
+    document.getElementById('val-users').textContent  = users + '社';
+    document.getElementById('val-rate').textContent   = (rate * 100) + '%';
+    document.getElementById('val-packs').textContent  = packs + 'パック';
+    document.getElementById('sim-monthly').textContent = '¥' + monthly.toLocaleString();
+    document.getElementById('sim-yearly').textContent  = '年間換算 約 ¥' + yearly.toLocaleString();
+  }
+  ['sl-users','sl-rate','sl-packs'].forEach(id => {
+    document.getElementById(id).addEventListener('input', calcSim);
+  });
+  calcSim();
+
+  // FAQ アコーディオン
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
   });
