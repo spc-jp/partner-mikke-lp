@@ -1156,10 +1156,11 @@
 </div>
 
 <script>
+window.addEventListener('load', function() {
 
   // トップへ戻るボタン表示制御
-  (function() {
-    var btn = document.getElementById('backToTop');
+  var btn = document.getElementById('backToTop');
+  if (btn) {
     function toggleBtn() {
       if (window.scrollY >= 400) {
         btn.classList.add('visible');
@@ -1169,60 +1170,69 @@
     }
     window.addEventListener('scroll', toggleBtn, { passive: true });
     toggleBtn();
-  })();
+  }
 
   // シミュレーター
   function calcSim() {
-    const users = parseFloat(document.getElementById('sl-users').value);
-    const rate  = parseFloat(document.getElementById('sl-rate').value) / 100;
-    const packs = parseFloat(document.getElementById('sl-packs').value);
-    const monthly = Math.round(users * rate * packs * 5980 * 0.3);
-    const yearly  = monthly * 12;
+    var users = parseFloat(document.getElementById('sl-users').value);
+    var rate  = parseFloat(document.getElementById('sl-rate').value) / 100;
+    var packs = parseFloat(document.getElementById('sl-packs').value);
+    var monthly = Math.round(users * rate * packs * 5980 * 0.3);
+    var yearly  = monthly * 12;
     document.getElementById('val-users').textContent  = users + '社';
     document.getElementById('val-rate').textContent   = (rate * 100) + '%';
     document.getElementById('val-packs').textContent  = packs + 'パック';
     document.getElementById('sim-yearly').textContent  = '¥' + yearly.toLocaleString();
     document.getElementById('sim-monthly').textContent = '毎月 約 ¥' + monthly.toLocaleString();
   }
-  ['sl-users','sl-rate','sl-packs'].forEach(id => {
-    document.getElementById(id).addEventListener('input', calcSim);
+  ['sl-users','sl-rate','sl-packs'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', calcSim);
   });
   calcSim();
 
   // FAQ アコーディオン
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      q.parentElement.classList.toggle('open');
+    });
   });
 
-  function submitForm() {
-    const company = document.getElementById('f-company').value.trim();
-    const name = document.getElementById('f-name').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    const users = document.getElementById('f-users').value;
-    const date = document.getElementById('f-date').value.trim();
-    if (!company || !name || !email || !users || !date) {
-      alert('必須項目をすべて入力してください。');
-      return;
-    }
-    const tel = document.getElementById('f-tel').value.trim();
-    const subject = encodeURIComponent('【共創パートナーみっけ】説明会お申し込み');
-    const body = encodeURIComponent(
-      '共創パートナーみっけ 説明会お申し込み\n\n' +
-      '会社名：' + company + '\n担当者名：' + name + '\nメール：' + email +
-      '\n電話：' + (tel || '未記入') + '\n楽一ユーザー数：' + users + '\n希望日時：' + date
-    );
-    const w = window.open('https://mail.google.com/mail/?view=cm&to=spc@smileplusctg.com&su=' + subject + '&body=' + body, '_blank');
-    if (!w) window.location.href = 'mailto:spc@smileplusctg.com?subject=' + subject + '&body=' + body;
-    document.getElementById('modal').classList.add('open');
+  // モーダル背景クリックで閉じる
+  var modal = document.getElementById('modal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
   }
 
-  function closeModal() {
-    document.getElementById('modal').classList.remove('open');
-  }
+});
 
-  document.getElementById('modal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
+function submitForm() {
+  var company = document.getElementById('f-company').value.trim();
+  var name    = document.getElementById('f-name').value.trim();
+  var email   = document.getElementById('f-email').value.trim();
+  var users   = document.getElementById('f-users').value;
+  var date    = document.getElementById('f-date').value.trim();
+  if (!company || !name || !email || !users || !date) {
+    alert('必須項目をすべて入力してください。');
+    return;
+  }
+  var tel = document.getElementById('f-tel').value.trim();
+  var subject = encodeURIComponent('【共創パートナーみっけ】説明会お申し込み');
+  var body = encodeURIComponent(
+    '共創パートナーみっけ 説明会お申し込み\n\n' +
+    '会社名：' + company + '\n担当者名：' + name + '\nメール：' + email +
+    '\n電話：' + (tel || '未記入') + '\n楽一ユーザー数：' + users + '\n希望日時：' + date
+  );
+  var w = window.open('https://mail.google.com/mail/?view=cm&to=spc@smileplusctg.com&su=' + subject + '&body=' + body, '_blank');
+  if (!w) window.location.href = 'mailto:spc@smileplusctg.com?subject=' + subject + '&body=' + body;
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+}
 </script>
 
 <!-- トップへ戻るボタン -->
