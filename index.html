@@ -783,7 +783,7 @@
 
 <!-- ナビ -->
 <nav class="nav">
-  <div class="nav-logo">● 共創パートナーみっけ</div>
+  <a href="#" class="nav-logo" style="text-decoration:none;">● 共創パートナーみっけ</a>
   <a href="#cta" class="nav-cta">説明会に申し込む</a>
 </nav>
 
@@ -1158,14 +1158,18 @@
 <script>
 
   // トップへ戻るボタン表示制御
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY >= 400) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
+  (function() {
+    var btn = document.getElementById('backToTop');
+    function toggleBtn() {
+      if (window.scrollY >= 400) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
     }
-  });
+    window.addEventListener('scroll', toggleBtn, { passive: true });
+    toggleBtn();
+  })();
 
   // シミュレーター
   function calcSim() {
